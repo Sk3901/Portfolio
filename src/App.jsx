@@ -1,6 +1,8 @@
 // src/App.jsx
 import React from 'react';
 import Navbar from './components/Navbar';
+import About from './components/About';
+import Projects from './components/Projects';
 import VideoBg from './components/VideoBg';
 import Home from './components/Home';
 import './index.css';
@@ -24,6 +26,7 @@ const App = () => {
       <section id="about" className="relative z-10 p-10 bg-gray-900 bg-opacity-60 text-white">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold mb-4">About Me</h2>
+          <About />
           <p>
             abaut 
             <h1>HTML</h1>
@@ -46,6 +49,7 @@ const App = () => {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold mb-4">Projects</h2>
           <p>
+            < Projects />
             Here are some of my projects
             <h1>HTML</h1>
             <h1>HTML</h1>
