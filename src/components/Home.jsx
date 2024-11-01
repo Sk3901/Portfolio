@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+
 const Home = () => {
   return (
     <div className="relative z-10 flex flex-col items-center justify-start min-h-screen pt-48"> 

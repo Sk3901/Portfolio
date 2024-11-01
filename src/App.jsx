@@ -5,6 +5,7 @@ import About from './components/About';
 import Projects from './components/Projects';
 import VideoBg from './components/VideoBg';
 import Home from './components/Home';
+import Contact from './components/Contact'
 import './index.css';
 import Lottie from 'lottie-react';
 import animationData from './assets/Animation.json';
@@ -25,107 +26,64 @@ const App = () => {
       {/* Randomly added sections to extend the webpage */}
       <section id="about" className="relative z-10 p-10 bg-gray-900 bg-opacity-60 text-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-4">About Me</h2>
+          <div className="text-3xl font-bold mb-4">About Me</div>
           <About />
-          <p>
-            abaut 
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-
-          </p>
+             
+            <div className='text-3xl'>HTML</div>
+            <div className='text-3xl'>HTML</div>
+            <div className='text-3xl'>HTML</div>
+            <div className='text-3xl'>HTML</div>
+            <div className='text-3xl'>HTML</div>
+            <div className='text-3xl'>HTML</div>
+            <div className='text-3xl'>HTML</div>
         </div>
       </section>
 
       <section id="projects" className="relative z-10 p-10 bg-gray-900 bg-opacity-60 text-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-4">Projects</h2>
-          <p>
+          <div className="text-3xl font-bold mb-4">Projects</div>
             < Projects />
             Here are some of my projects
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
+            <div>HTML</div>
+            <div>HTML</div>
+            <div>HTML</div>
+            <div>HTML</div>
+            <div>HTML</div>
+            <div>HTML</div>
+            <div>HTML</div>
+            <div>HTML</div>
+            <div>HTML</div>
+            <div>HTML</div>
 
-          </p>
-          <div className="mt-4">
-            <div className="p-4 bg-gray-700 mb-5">Project 1</div>
-            <div className="p-4 bg-gray-700 mb-5">Project 2</div>
-            <div className="p-4 bg-gray-700 mb-5">Project 3</div>
-          </div>
         </div>
       </section>
 
       <section id="skills" className="relative z-10 p-10 bg-gray-900 bg-opacity-60 text-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-4">Skills</h2>
-          <p>
-            skilld
-            d
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
+          <div className="text-3xl font-bold mb-4">Skills</div>
+          <div>HTML</div>
+          <div>HTML</div>
+          <div>HTML</div>
+          <div>HTML</div>
+          <div>HTML</div>
+          <div>HTML</div>
+          <div>HTML</div>
 
-          </p>
         </div>
       </section>
 
       <section id="contact" className="relative z-10 p-10 bg-gray-900 bg-opacity-60 text-white">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold mb-4">Contact Me</h2>
-          <p>
-            You can reach me via email at example@example.com. 
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
-            <h1>HTML</h1>
+          < Contact/>
+          <div>HTML</div>
+          <div>HTML</div>
+          <div>HTML</div>
+          <div>HTML</div>
+          <div>HTML</div>
+          <div>HTML</div>
+          <div>HTML</div>
 
-          </p>
         </div>
       </section>
 

@@ -4,16 +4,16 @@ const About = () => {
     return(
         <section id="about" className="relative z-10 p-10 bg-gray-900 bg-opacity-80 text-white">
             <div className="max-w-4xl mx-auto">
-                <h2 className="text-2xl font-bold mb-4">About</h2>
-                <p>
+                <div className="text-2xl font-bold mb-4">About</div>
+                <div className="text-l font-bold mb-4">
                     I am a web developer with a passion for creating beautiful and functional websites. I have experience with HTML, CSS, JavaScript, React, and Tailwind CSS. I am always looking to learn new technologies and improve my skills. I am currently looking for new opportunities to work on exciting projects and collaborate with other developers.
-                </p>
-                <p>
+                </div>
+                <div className="text-l font-bold mb-4">
                     ---
-                </p>
-                <p>
+                </div>
+                <div className="text-l font-bold mb-4">
                     Check out my projects at the projects page!
-                </p>
+                </div>
             </div>
         </section>
     )

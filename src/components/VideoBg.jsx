@@ -1,6 +1,6 @@
 // src/components/VideoBg.jsx
 import React from "react";
-import videoSrc from "../assets/Videobg.mp4"; // Ensure the filename is correct
+import videoSrc from "../assets/Videobg.mp4"; 
 
 const VideoBg = () => {
   return (
