@@ -1,260 +1,248 @@
-export default class infiniteSlider{
+import React, { useRef, useEffect } from 'react';
+
+// InfiniteSlider Class
+class InfiniteSlider {
     constructor(config = {}) {
+        this.container = config.container || null; // The container where the slider will be rendered
+        this.outerContainer = {
+            selector: config.outerContainer?.selector || '.inf-slider__outer-container',
+            height: config.outerContainer?.height || 500,
+            background: config.outerContainer?.background || 'inherit',
+            element: null,
+            "z-index": 9999,  // Set z-index for outer container
+        };
 
-        this.outerContainer = config.outerContainer || {};
-        this.outerContainer.selector = config.outerContainer.selector || 'inf_slider_outer_container';
-        this.outerContainer.height = config.outerContainer.height || 200;
-        this.outerContainer.margin = config.outerContainer.margin || '0 auto';
-        this.outerContainer.padding = config.outerContainer.padding || 0;
-        this.outerContainer.maxWidth = config.outerContainer.maxWidth || 1200;
-        this.outerContainer.background = config.outerContainer.background || 'inherit';
-        this.outerContainer.sideGradientRGB = config.outerContainer.sideGradientRGB || '';
-        this.outerContainer.element = null;
+        this.innerContainer = {
+            selector: '.inf-slider__inner-container',
+            array: [],
+            width: null,
+        };
 
-        this.setInnerContainer = {};
-        this.setInnerContainer.selector = 'inf_slider_inner_container';
-        this.setInnerContainer.array = [];
-        this.setInnerContainer.width = null
-
-        this.title= config.title || {};
-        this.title.text = config.title.text || null;
+        this.title = config.title || {};
+        this.title.text = config.title.text || 'Infinite Slider';
         this.title.fontSize = config.title.fontSize || 74;
-        this.title.fontFamily = config.title.fontFamily || "'Open Sans', sans-serif";
-        this.title.textAlign = config.title.textAlign || 'center';  
-        this.title.padding = config.title.padding || 20;
-
+        this.title.fontFamily = config.title.fontFamily || 'Arial';
+        this.title.textAlign = config.title.textAlign || 'center';
+        this.title["z-index"] = 99999; // Set z-index for title
 
         this.elements = config.elements || {};
         this.elements.width = config.elements.width || 70;
         this.elements.margin = config.elements.margin || 20;
-        this.elements.padding = config.elements.padding || 20;
-        this.elements.items = config.elements.items || []; 
+        this.elements.items = config.elements.items || [];
         this.elements.background = config.elements.background || 'inherit';
 
         this.sliderControls = config.sliderControls || {};
-        this.sliderControls.autostart = config.sliderControls.autoStart || null;
+        this.sliderControls.autoStart = config.sliderControls.autoStart || false;
         this.sliderControls.steps = config.sliderControls.steps || 1;
         this.sliderControls.intervalTime = config.sliderControls.intervalTime || 50;
-        this.sliderControls.developmentMode = config.sliderControls.developmentMode || false;
         this.sliderControls.interval = null;
 
         this.init();
-
-
     }
 
     setOuterContainer() {
-        this.outerContainer.element = document.querySelector(this.outerContainer.selector);
-
-
+        if (this.container) {
+            this.outerContainer.element = this.container;
+        }
     }
+
     setInnerContainerWidth() {
-        this.setInnerContainer.width = this.elements.items.length * (this.elements.width + (this.elements.margin * 2));
-
-
+        this.innerContainer.width = this.elements.items.length * (this.elements.width + (this.elements.margin * 2));
     }
-    setInnerContainer(){
-        var containerAmount = Math.ceil(this.outerContainer.maxWidth / this.innerContainer.width) + 1;
-        for (var i=0; i < containerAmount; i++) {
-            let containerHTML = '';
-            let elemntsHTML = '';
-            let containerSelector = `${this.innerContainer.selector.replaceAll('.','')}--${i}`;
 
+    setAllInnerContainers() {
+        const containerAmount = Math.ceil(this.outerContainer.element.offsetWidth / this.innerContainer.width) + 100;
 
-            for (var item of thisq.elements.items) {
+        for (let i = 0; i < containerAmount; i++) {
+            let elementsHTML = '';
+            let containerSelector = `inf-slider__inner-container--${i}`;
+
+            for (let item of this.elements.items) {
                 elementsHTML += `
-                ${!item.src
-                ? 'div class="inf-slider__slide">' + item.content + '</div>'
-                : '<div class="inf-slider__slide"><img src ="' + item.src + '></div>'
-            }`
+                    ${!item.src
+                        ? `<div class="inf-slider__slide">${item.content}</div>`
+                        : `<div class="inf-slider__slide"><img src="${item.src}" alt="${item.content}"></div>`
+                    }
+                `;
             }
-            containerHTML = `
-            <div class="${this.innerContainer.selector.replaceAll('.', '')} ${containerSelector}>
-                ${elemntsHTML}
 
-            </div>
-            `
+            const containerHTML = `
+                <div class="${this.innerContainer.selector.replace('.', '')} ${containerSelector}" 
+                     style="transform: translate(${this.innerContainer.width * i}px, -50%); z-index: 9998">
+                    ${elementsHTML}
+                </div>
+            `;
 
             this.innerContainer.array.push({
                 containerHTML: containerHTML,
-                contaierSelector: containerSelector
-            })
+                containerSelector: containerSelector
+            });
         }
-
     }
-    insertCSS(){
-        var styletag = document.createElement('style');
-        styletag.id = 'inf-slider-css';
-        styletag.innerHTML = `
-        @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
-        ${this.outerContainer.selector}{
-            border: ${this.sliderControls.developmentMode ? '1px solid limegreen' : '' };
-            background: ${this.outerContainer.background};
-            position: relative;
-            width: 90%;
-            height: ${this.outerContainer.height}px;
-            max-width: ${this.outerContainer.maxWidth}px;
-            margin: 0 auto;
-            padding: ${this.outerContainer.padding}px;
-            overflow: hidden;
-            display: grid;
-        }
-
-        ${this.onnerContainer.selector}::before,
-        ${this.outerContainer.selector}::after{
+    insertCSS() {
+        const styleTag = document.createElement('style');
+        const sliderCSS = `
+            ${this.outerContainer.selector} {
+                background: ${this.outerContainer.background};
+                position: relative;
+                width: 100%;
+                height: ${this.outerContainer.height}px;
+                max-width: 1200px;
+                margin: 50px auto 0; /* Move container down with margin-top */
+                overflow: hidden;
+                display: grid;
+                z-index: ${this.outerContainer["z-index"]}; /* Ensures outer container is on top */
+                border-radius: 10px;
+                padding: 20px;
+                border: 2px solid #555
+             
+            }
+            .inf-slider__slide {
+                width: ${this.elements.width}px;
+                margin: ${this.elements.margin}px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+    
+            .inf-slider__slide img {
+                width: 100%; /* Adjust based on parent container width */
+                height: auto; /* Maintain aspect ratio */
+                max-width: ${this.elements.width}px; /* Constrain max width */
+                max-height: ${this.elements.width}px; /* Constrain max height */
+                object-fit: cover; /* Ensures the logo fits within the container */
+            }
+            /* Add overlay background */
+        ${this.outerContainer.selector}::before {
             content: '';
             position: absolute;
-            height: 100%;
-            width: 100%;
             top: 0;
             left: 0;
-            background: ${this.outerContainer.sideGradientRGB.length > 0
-            ? 'linear-gradient(to right, rgba(' + this.outerContainer.sideGradientRGB + ', 1) 0%, rgba(' + this.outerContainer.sideGradientRGB + ', 0) 10%)'
-            : '' }
-        z-index: 5;
-    }
-    ${this.outerContainer.selector}::after {
-        right: 0px;
-        background: ${this.outerContainer.sideGradientRGB.length > 0 
-            ? 'linear-gradient(to left, rgba(' + this.outerContainer.sideGradientRGB + ',1) 0%, rgba(' + this.outerContainer.sideGradientRGB + ',0) 10%)'  
-            : ''};
-    }
-    .inf-slider__show-title-wrapper {
-        display: block;
-        text-align: ${this.title.textAlign};
-    }
-    .inf-slider__hide-title-wrapper {
-        display: none;
-        overflow: hidden;
-    }
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3); /* Semi-transparent black overlay */
+            z-index: -1; /* Ensure overlay is below content */
+        }
 
-    .inf-slider__title{
-        color: ${this.title.colorCode};
-        font-size: ${this.title.fontSize};
-        font-family: ${this.title.fontFamily || "'Open Sans', sans-serif"};
-        padding: ${this.title.padding}px;
+        ${this.outerContainer.selector} img {
+            position: relative;
+            z-index: 1; /* Keep images above overlay */
+        }
+    
+            .inf-slider__title {
+                font-size: ${this.title.fontSize}px;
+                text-align: ${this.title.textAlign};
+                font-family: ${this.title.fontFamily};
+                z-index: ${this.title["z-index"]}; /* Title above other content */
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100%;
+            }
+    
+            ${this.innerContainer.selector} {
+                position: absolute;
+                top: 20%; /* Adjust this value to move logos further down inside the container */
+                display: grid;
+                width: ${this.innerContainer.width}px;
+                grid-template-columns: repeat(${this.elements.items.length}, 1fr);
+                z-index: 9998; /* Set z-index for inner containers */
+            }
+    
+            .inf-slider__slide {
+                width: ${this.elements.width}px;
+                height: ${this.elements.width}px;
+                margin: ${this.elements.margin}px;
+                z-index: 9998; /* Set z-index for individual slides */
+            }
+        `;
+        styleTag.innerHTML = sliderCSS;
+        document.head.appendChild(styleTag);
     }
-
-    ${this.innerContainer.selector}-wrapper {
-        position:relative;
-        height: 100%;
-        
-    }
-
-    ${this.innerContainer.selector} {
-        position: absolute;
-        top: 0;
-        display; grid;
-        grid-template-columns: repeat(${this.elements.items.length}, 1fr);
-        width: ${this.sliderControls.developmentMode ? 'red 1px solid' : ''};
-    }
-
-    .inf-slider__slide {
-        display: inline-block;
-        background: ${this.elements.background};
-        margin: ${this.elements.margin}px;
-        padding: ${this.elements.padding}px;
-        width: ${this.elements.width}px;
-        height: ${this.elements.width * 2};
-        font-family: ${this.title.fontFamily || "'Open Sans', sans-serif"};
-        position: relative;
-    }
-    .inf-slider__slide img {
-        width: 100%;
-        
-    }
-    `
-    document.head.appendChild(styletag);
-    };
     
 
-    insertHTML(){
-        var innerSliderHTML = '';
+    insertHTML() {
+        if (this.outerContainer.element) {
+            this.outerContainer.element.innerHTML = '';
 
-        this.outerContainer.element.innerHTML += `
-        <div class="${this.title.text ? 'inf-slider__show-title-wrapper' : 'inf-slider__hide-title-wrapper'}">
-        <h1 class="inf-slider__title">${this.title.text}</h1>
 
-        </div>
+            let innerHTML = '';
+            for (const container of this.innerContainer.array) {
+                innerHTML += container.containerHTML;
+            }
 
-        this.outerContainer.element.innerHTML += `
-        <div class="${this.innercontainer.selector.replaceAll('.','')}-wrapper">
-            ${innerSliderHTML}
-        </div>
-        `;
+            this.outerContainer.element.innerHTML += `
+                <div class="${this.innerContainer.selector.replace('.', '')}-wrapper">
+                    ${innerHTML}
+                </div>
+            `;
+        }
     }
-    startAnimation(){
 
+    startAnimation() {
+        const outerLeft = this.outerContainer.element.offsetLeft;
+        const allContainers = document.querySelectorAll(this.innerContainer.selector);
+        const steps = Array.from({ length: allContainers.length }, (_, i) => i * this.innerContainer.width);
+
+        this.sliderControls.interval = setInterval(() => {
+            for (let i = 0; i < allContainers.length; i++) {
+                const rightEdge = allContainers[i].getBoundingClientRect().right;
+
+                if (rightEdge < outerLeft) {
+                    steps[i] = Math.max(...steps) + this.innerContainer.width;
+                    allContainers[i].style.transform = `translate(${steps[i]}px, -50%)`;
+                } else {
+                    steps[i] -= this.sliderControls.steps;
+                }
+
+                steps[i] -= this.sliderControls.steps;
+                allContainers[i].style.transform = `translate(${steps[i]}px, -50%)`;
+            }
+        }, this.sliderControls.intervalTime);
     }
 
     init() {
         this.setOuterContainer();
         this.setInnerContainerWidth();
-        this.setInnerContainer();
+        this.setAllInnerContainers();
         this.insertCSS();
-        this.insertHTML()
-        this.startAnimation();
-    }
+        this.insertHTML();
 
-
-}
-
-var sliderConfig = {
-    setOuterContainer: {
-        selector: 'inf_slider_outer_container',
-        height: 300,
-        margin: '0 auto',
-        padding: 20,
-        maxWidth: 1500,
-        background: '#fff',
-        sideGradientRGB: '255,255,255',
-
-    },
-    title: {
-        text: "Skills and tools",
-        fontSize: 74,
-        fontFamily: "'Open Sans', sans-serif",
-        colorCode: '#333',
-        textAlign: 'center',
-        padding: 25,
-
-    },
-    elements: {
-        width: 250,
-        margin: 20,
-        padding: 0,
-        background: 'inherit',
-        color: '#333',
-        items:
-        [
-            {src: '../assets/images/css.jpg', title: 'CSS'},
-            {src: '../assets/images/flask.jpg', title: 'Flask'},
-            {src: '../assets/images/fly.jpg', title: 'Fly.io'},
-            {src: '../assets/images/git.jpg', title: 'Git'},
-            {src: '../assets/images/github.jpg', title: 'Github'},
-            {src: '../assets/images/html.jpg', title: 'Html'},
-            {src: '../assets/images/js.jpg', title: 'Js'},
-            {src: '../assets/images/md.jpg', title: 'Md'},
-            {src: '../assets/images/mongo.jpg', title: 'Mongo'},
-            {src: '../assets/images/mysql.jpg', title: 'Mysql'},
-            {src: '../assets/images/postman.jpg', title: 'Postman'},
-            {src: '../assets/images/pycharm.jpg', title: 'Pycharm'},
-            {src: '../assets/images/python.jpg', title: 'Python'},
-            {src: '../assets/images/react.jpg', title: 'React'},
-            {src: '../assets/images/trello.jpg', title: 'Trello'},
-            {src: '../assets/images/vscode.jpg', title: 'Vscode'},
-
-
-        ]
-
-    },
-    sliderControls: {
-        autostart: true,
-        step: 1,
-        intervalTime: 50,
-        developmentMode: false,
-
+        if (this.sliderControls.autoStart) {
+            this.startAnimation();
+        }
     }
 }
 
+// React Component for InfiniteSlider
+const InfiniteSliderComponent = ({ config }) => {
+    const sliderContainerRef = useRef(null);  // Create a ref for the container
+
+    useEffect(() => {
+        // Ensure the slider initializes after the component is mounted
+        if (sliderContainerRef.current) {
+            const slider = new InfiniteSlider({
+                container: sliderContainerRef.current,  // Pass the container ref to the class
+                ...config,  // Pass other necessary props for the slider
+            });
+
+            // Start the slider animation if autoStart is true
+            if (config.sliderControls?.autoStart) {
+                slider.startAnimation();
+            }
+
+            // Clean up interval when the component is unmounted
+            return () => {
+                if (slider.sliderControls?.interval) {
+                    clearInterval(slider.sliderControls.interval);
+                }
+            };
+        }
+    }, [config]);  // Re-run if the config changes
+
+    return <div ref={sliderContainerRef} className="inf-slider__outer-container" />;
+};
+
+export default InfiniteSliderComponent;
