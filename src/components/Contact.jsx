@@ -1,6 +1,7 @@
 import React from "react";
 import githubLogo from "../assets/images/github1.png";
 import linkedinLogo from "../assets/images/linkedin1.png";
+import mailLogo from "../assets/images/mail1.png";
 
 const Contact = () => {
   const openLink = (url) => {
@@ -8,18 +9,17 @@ const Contact = () => {
   };
 
   return (
-    <div className="flex justify-center items-center">
-      <div
-        onClick={() => openLink("https://www.github.com")}
-        className="w-12 h-12 mx-4 cursor-pointer"
-      >
-        <img src={githubLogo} alt="LinkedIn logo" className="w-full h-full" />
+    <div className="contact">
+      <div id="github" onClick={() => openLink("https://www.github.com/sk3901")}>
+        <img src={githubLogo} alt="GitHub" />
       </div>
-      <div
-        onClick={() => openLink("https://www.linkedin.com ")}
-        className="w-12 h-12 mx-4 cursor-pointer"
-      >
-        <img src={linkedinLogo} alt="GitHub logo" className="w-full h-full" />
+      <div id="linkedin" onClick={() => openLink("https://www.linkedin.com/in/samu-kirjonen-a1b306303/")}>
+        <img src={linkedinLogo} alt="LinkedIn" />
+      </div>
+      <div id="mail">
+        <a href="mailto:samu.kirjonen@gmail.com">
+          <img src={mailLogo} alt="Mail" />
+        </a>
       </div>
     </div>
   );

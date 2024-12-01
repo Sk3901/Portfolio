@@ -2,7 +2,11 @@ import React from "react";
 
 const About = () => {
     return(
-        <section id="about" className="relative z-10 p-10 bg-gray-900 bg-opacity-80 text-white">
+        <section 
+        id="about" 
+        className="relative z-10 p-10 text-white"
+        style={{ backgroundColor: 'rgba(0,50,50,0.4)'}}
+        >
             <div className="max-w-4xl mx-auto">
                 <div className="text-2xl font-bold mb-4">About</div>
                 <div className="text-l font-bold mb-4">

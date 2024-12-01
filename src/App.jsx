@@ -9,7 +9,7 @@ import Contact from './components/Contact';
 import './index.css';
 import Lottie from 'lottie-react';
 import animationData from './assets/Animation.json';
-import InfiniteSliderComponent from './components/skills';  // Import the InfiniteSlider component
+import InfiniteSliderComponent from './components/skills'; // Correct import
 
 const App = () => {
   const sliderConfig = {
@@ -22,7 +22,7 @@ const App = () => {
       width: 150,
       margin: 10,
       items: [
-        { content: 'css', src: '/src/assets/images/css1.png' },
+        { content: 'css', src: '/src/assets/images/css.png' },
         { content: 'flask', src: '/src/assets/images/flask1.png' },
         { content: 'fly', src: '/src/assets/images/fly1.png' },
         { content: 'git', src: '/src/assets/images/git1.png' },
@@ -38,6 +38,7 @@ const App = () => {
         { content: 'react', src: '/src/assets/images/react1.png' },
         { content: 'trello', src: '/src/assets/images/trello1.png' },
         { content: 'vscode', src: '/src/assets/images/vscode1.png' },
+        { content: 'ccna', src: '/src/assets/images/ccna1.png' },
 
 
         // Add more skills and images as needed
@@ -82,6 +83,7 @@ const App = () => {
       <section id="projects" className="relative z-10 p-10 bg-gray-900 bg-opacity-60 text-white">
         <div className="max-w-4xl mx-auto">
           <div className="text-3xl font-bold mb-4">Projects</div>
+          
           <Projects />
           Here are some of my projects
           <div>HTML</div>
