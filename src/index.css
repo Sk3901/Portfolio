@@ -59,39 +59,56 @@ button:focus {
 
 .projects {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    padding-top: 2rem;
-    background-color: grey;
-    opacity: 0.8;
-    width: 15rem;
-    padding-left: 1.4rem;
-    padding-right: 1.4rem;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #222; /* Darker background for contrast */
 }
+
+.projects:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
 
 .project-title {
     text-align: center;
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
 }
+
+.description {
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: #ddd;
+    margin-bottom: 1.5rem;
+}
+
 
 #sourcecode {
     text-align: center;
     align-items: center;
     color: white;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    border: 0.2rem solid white;
+    background: linear-gradient(90deg, #004aad, #0066cc);
+    padding: 0.8rem 1.5rem;
     border-radius: 1rem;
-    padding-right: 1rem;
-    padding-left: 1rem;  
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 #sourcecode:hover {
-    background-color: #004aad;
-    color: white;
+    background: linear-gradient(90deg, #0066cc, #004aad);
+    transform: translateY(-3px);
 }
+
 
 .description{
     color:white;
