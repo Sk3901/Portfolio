@@ -142,7 +142,147 @@ button:focus {
     object-fit: cover; /* Crop or scale the image to fill the container */
 }
 
+.projects-section {
+    padding: 20px;
+    text-align: center;
+}
 
+/* Grid for Cards */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-items: center;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 20rem;
+    height: 35rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card:hover {
+    transform: translateY(-1rem);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-image {
+    width: 100%;
+    height: 17rem;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-description {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+#sourcecode {
+    text-align: center;
+    align-items: center;
+    color: white;
+    background: linear-gradient(90deg, #004aad, #0066cc);
+    padding: 0.8rem 1.5rem;
+    border-radius: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#sourcecode:hover {
+    background: linear-gradient(90deg, #0066cc, #004aad);
+    transform: translateY(-3px);
+}
+
+/* Learn More Button */
+.learn-more-button {
+    padding: 0.8rem 1.5rem;
+    background-color: #004aad;
+    color: white;
+    border-radius: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background 0.3s ease, transform 0.2s ease;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.learn-more-button:hover {
+    background: linear-gradient(90deg, #0066cc, #004aad);
+    transform: translateY(-3px);
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 3rem;
+    border-radius: 1rem;
+    width: 40rem;
+    max-width: 80%;
+    text-align: center;
+}
+
+.modal-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: black;
+    font-weight: bold;
+}
+
+.modal-content p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: black;
+}
+
+.modal-content button {
+    padding: 1rem 2rem;
+    background-color: #004aad;
+    color: white;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.modal-content button:hover {
+    background-color: #0066cc;
+}
 
 @media only screen and (max-width: 786px) {
     .img-style {
@@ -150,3 +290,4 @@ button:focus {
         width: 2em;
     }
 }
+
