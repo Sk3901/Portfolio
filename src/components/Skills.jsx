@@ -10,7 +10,7 @@ class InfiniteSlider {
             height: config.outerContainer?.height || 200,
             background: config.outerContainer?.background || 'inherit',
             element: null,
-            "z-index": 9999,
+            "z-index": 1,
         };
 
         this.innerContainer = {

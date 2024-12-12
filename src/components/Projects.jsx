@@ -1,48 +1,80 @@
-import React from "react";
+import React, {useEffect} from "react";
+
 
 const projectsData = [
     {
         id: 1,
-        title: "Portfolio page",
-        description: "Personal portfolio page",
-        image: { src: 'src/assets/images/Portfolio.png', alt: "Image of ota portfolio project" },
+        title: "Portfolio Page",
+        description: "Personal portfolio showcasing skills and projects.",
+        image: { src: 'src/assets/images/Portfolio.png', alt: "Image of portfolio project" },
         sourceCode: "https://github.com/Sk3901/portfolio",
-        learnings: "Blää"
+        categories: [
+            {
+                title: "Frontend",
+                content: "HTML, CSS, JavaScript. Built modular components and responsive layouts."
+            },
+            {
+                title: "Design",
+                content: "Focused on modern UX/UI principles and accessibility."
+            }
+        ]
     },
     {
         id: 2,
         title: "Ota Kiinni Jos Saat",
-        description: "Fullstack group project. A game based on boardgame Scotland Yard.",
+        description: "Fullstack project. A game based on boardgame Scotland Yard.",
         image: { src: 'src/assets/images/ota_kiinni_jos_saat.png', alt: "Image of ota kiinni jos saat project" },
         sourceCode: "https://github.com/Sk3901/Ota_kiinni_jos_saat",
-        learnings: `This project is a full-stack web-based game inspired by the Scotland Yard board game. It challenges players to strategize and navigate using real-world maps, with the option to play against AI or other players.
-        - Technologies used: 
-        - Frontend: HTML, CSS, JavaScript
-        - Backend: Python with Flask
-        - Database: SQL
-        - Api Integrations:
-        - Azure AI Services. Used to enable AI opponents. Players can choose whether to play against humans, AI, or a mix of both.
-        - Google maps api. usedfor dynamic and interactive map untegration within the gameplay.
-        - key features:
-        - Custom Flask endpoints`
-
+        categories: [
+            {
+                title: "Frontend",
+                content: "HTML, CSS, JavaScript for dynamic UI and gameplay interactions."
+            },
+            {
+                title: "Backend",
+                content: "Python Flask for APIs, custom endpoints, and game logic."
+            },
+            {
+                title: "Database",
+                content: "SQL database for player and game state management."
+            },
+            {
+                title: "APIs",
+                content: "Azure AI for AI opponents and Google Maps for map integration."
+            }
+        ]
     }
 ];
 
 const Modal = ({ isOpen, project, closeModal }) => {
+    useEffect(() => {
+        if (isOpen) {
+            document.body.classList.add("no-scroll");
+        } else {
+            document.body.classList.remove("no-scroll");
+        }
+
+        return () => document.body.classList.remove("no-scroll");
+    }, [isOpen]);
+
     if (!isOpen) return null;
+
     return (
         <div className="modal-overlay" onClick={closeModal}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                <h2>{project.title}</h2>
-                <p>
-                    {project.learnings.split('\n').map((line, index) => (
-                        <span key={index}>
-                            {line.trim()}
-                            <br />
-                        </span>
+                <h2 className="modal-title">{project.title}</h2>
+                <div className="modal-title-underline"></div>
+                <div className="modal-description">
+                    <p>{project.description}</p>
+                </div>
+                <div className="modal-cards">
+                    {project.categories.map((category, index) => (
+                        <div className="modal-card" key={index}>
+                            <h3>{category.title}</h3>
+                            <p>{category.content}</p>
+                        </div>
                     ))}
-                </p>
+                </div>
                 <button onClick={closeModal}>Close</button>
             </div>
         </div>

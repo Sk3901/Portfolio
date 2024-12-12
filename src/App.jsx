@@ -64,38 +64,12 @@ const App = () => {
           style={{ width: '100px', height: '300px' }}
         />
       </div>
-      
-      {/* Randomly added sections to extend the webpage */}
-      <section id="about" className="relative z-10 p-10 bg-gray-900 bg-opacity-60 text-white">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-3xl font-bold mb-4">About Me</div>
           <About />
-          <div className='text-3xl'>HTML</div>
-          <div className='text-3xl'>HTML</div>
-          <div className='text-3xl'>HTML</div>
-          <div className='text-3xl'>HTML</div>
-          <div className='text-3xl'>HTML</div>
-          <div className='text-3xl'>HTML</div>
-          <div className='text-3xl'>HTML</div>
-        </div>
-      </section>
-
+  
       <section id="projects" className="relative z-10 p-10 bg-gray-900 bg-opacity-60 text-white">
         <div className="max-w-4xl mx-auto">
           <div className="text-3xl font-bold mb-4">Projects</div>
-          
           <Projects />
-          Here are some of my projects
-          <div>HTML</div>
-          <div>HTML</div>
-          <div>HTML</div>
-          <div>HTML</div>
-          <div>HTML</div>
-          <div>HTML</div>
-          <div>HTML</div>
-          <div>HTML</div>
-          <div>HTML</div>
-          <div>HTML</div>
         </div>
       </section>
 
@@ -113,13 +87,6 @@ const App = () => {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold mb-4">Contact Me</h2>
           <Contact />
-          <div>HTML</div>
-          <div>HTML</div>
-          <div>HTML</div>
-          <div>HTML</div>
-          <div>HTML</div>
-          <div>HTML</div>
-          <div>HTML</div>
         </div>
       </section>
 
