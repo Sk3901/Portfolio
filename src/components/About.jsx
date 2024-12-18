@@ -1,26 +1,67 @@
 import React from "react";
 
 const About = () => {
-    return(
-        <section 
-        id="about" 
-        className="about-box"
-        style={{ backgroundColor: 'rgba(0,50,50,0.4)'}}
-        >
-            <div className="max-w-4xl mx-auto">
-                <div className="about-title">About</div>
-                <div className="text-l font-bold mb-4">
-                    I am a web developer with a passion for creating beautiful and functional websites. I have experience with HTML, CSS, JavaScript, React, and Tailwind CSS. I am always looking to learn new technologies and improve my skills. I am currently looking for new opportunities to work on exciting projects and collaborate with other developers.
-                </div>
-                <div className="text-l font-bold mb-4">
-                    ---
-                </div>
-                <div className="text-l font-bold mb-4">
-                    Check out my projects at the projects page!
-                </div>
+  return (
+    <section id="about" className="relative bg-gray-900 bg-opacity-60 p-10 text-white">
+      <div className="about-title">About Me</div>
+      <div className="about-container">
+        {/* About Text */}
+        <div className="about-text">
+          <p>
+            Welcome to my website! I’m a software development student with a strong passion for creating functional and impactful applications. I enjoy turning ideas into reality by developing innovative software solutions that solve real-world problems.
+          </p>
+          <p>
+            My journey in software development has allowed me to work with various technologies, and I’m always eager to learn more. I enjoy the challenge of building things from scratch, whether it’s the logic behind an application or the systems that support it.
+          </p>
+          <p>
+            I’m constantly exploring new tools, programming languages, and techniques to expand my skillset. My focus is on creating clean, efficient, and scalable solutions that deliver results.
+          </p>
+          <p>
+            I’m always open to new opportunities to collaborate, build exciting projects, and continue improving as a developer. Thank you for visiting my website!
+          </p>
+        </div>
+
+        {/* Timeline Section */}
+        <div className="timeline">
+          <div className="timeline-item">
+            <div className="timeline-date">2022</div>
+            <div className="timeline-content">
+              <h3>Metropolia University Of Applied Sciences</h3>
+              <p>Began my journey as a ICT student.</p>
             </div>
-        </section>
-    )
-}
+          </div>
+          <div className="timeline-item">
+            <div className="timeline-date">2022</div>
+            <div className="timeline-content">
+              <h3>First Projects</h3>
+              <p>Developed my first website and explored JavaScript.</p>
+            </div>
+          </div>
+          <div className="timeline-item">
+            <div className="timeline-date">2023</div>
+            <div className="timeline-content">
+              <h3>Fullstack open - University of Helsinki</h3>
+              <p>Learning fullstack principles.</p>
+            </div>
+          </div>
+          <div className="timeline-item">
+            <div className="timeline-date">2024</div>
+            <div className="timeline-content">
+              <h3>Projects - Portfolio and Ota Kiinni Jos Saat</h3>
+              <p>Creating projects diibadaaba dirli</p>
+            </div>
+          </div>
+          <div className="timeline-item">
+            <div className="timeline-date">(2026)</div>
+            <div className="timeline-content">
+              <h3>Expected Graduation</h3>
+              <p>Completing my degree.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 export default About;

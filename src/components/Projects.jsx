@@ -1,28 +1,39 @@
-import React, {useEffect} from "react";
-
+import React, { useEffect } from "react";
 
 const projectsData = [
     {
         id: 1,
         title: "Portfolio Page",
-        description: "Personal portfolio showcasing skills and projects.",
+        description: "Personal portfolio showcasing skills and selfmade projects. Designed with a focus on user experience.",
         image: { src: 'src/assets/images/Portfolio.png', alt: "Image of portfolio project" },
         sourceCode: "https://github.com/Sk3901/portfolio",
         categories: [
             {
                 title: "Frontend",
-                content: "HTML, CSS, JavaScript. Built modular components and responsive layouts."
+                content: "HTML, CSS, JavaScript"
             },
             {
-                title: "Design",
-                content: "Focused on modern UX/UI principles and accessibility."
+                title: "Tailwind",
+                content: "Project utilises tailwind framework to create better user experience."
+            },
+            {
+                title: "React",
+                content: "Built with React for dynamic UI and component management."
+            },
+            {
+                title: "Version control",
+                content: "Git for version control and GitHub for project hosting."
+            },
+            {
+                title: "Deployment",
+                content: "Deployed the application using platforms like Netlify and Heroku."
             }
         ]
     },
     {
         id: 2,
         title: "Ota Kiinni Jos Saat",
-        description: "Fullstack project. A game based on boardgame Scotland Yard.",
+        description: "Fullstack game based on boardgame Scotland Yard. 1-3 players that can be either human or AI players",
         image: { src: 'src/assets/images/ota_kiinni_jos_saat.png', alt: "Image of ota kiinni jos saat project" },
         sourceCode: "https://github.com/Sk3901/Ota_kiinni_jos_saat",
         categories: [
@@ -41,6 +52,14 @@ const projectsData = [
             {
                 title: "APIs",
                 content: "Azure AI for AI opponents and Google Maps for map integration."
+            },
+            {
+                title: "UX",
+                content: "User-friendly design. Responsive design for mobile and desktop."
+            },
+            {
+                title: "VSC",
+                content: "Git for version control and GitHub for project hosting."
             }
         ]
     }
@@ -64,9 +83,6 @@ const Modal = ({ isOpen, project, closeModal }) => {
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
                 <h2 className="modal-title">{project.title}</h2>
                 <div className="modal-title-underline"></div>
-                <div className="modal-description">
-                    <p>{project.description}</p>
-                </div>
                 <div className="modal-cards">
                     {project.categories.map((category, index) => (
                         <div className="modal-card" key={index}>
@@ -81,7 +97,6 @@ const Modal = ({ isOpen, project, closeModal }) => {
     );
 };
 
-
 const Card = ({ title, description, image, sourceCode, onClick }) => {
     const { src, alt } = image;
     return (
@@ -95,7 +110,7 @@ const Card = ({ title, description, image, sourceCode, onClick }) => {
                 </a>
                 <button 
                     className="learn-more-button"
-                    onClick={onClick} // Trigger the modal when clicked
+                    onClick={onClick}
                 >
                     Learn More
                 </button>
@@ -119,9 +134,8 @@ const Projects = () => {
     };
 
     return (
-        <section id="projects" className="projects-section">
+        <section id="projects" className="relative z-10 p-10 bg-gray-900 bg-opacity-0 text-white">
             <div className="projects-header">
-                {/* You can add a header title for the section here */}
             </div>
             <div className="projects-grid">
                 {projectsData.map((project) => (
@@ -131,7 +145,7 @@ const Projects = () => {
                         description={project.description}
                         image={project.image}
                         sourceCode={project.sourceCode}
-                        onClick={() => openModal(project)} // Pass the openModal function to Card
+                        onClick={() => openModal(project)}
                     />
                 ))}
             </div>

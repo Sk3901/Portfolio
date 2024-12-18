@@ -1,19 +1,22 @@
-// src/components/Navbar.jsx
 import React from "react";
 
+// Scroll functions
 const handleHomeClick = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 const handleAboutClick = () => {
   const aboutSection = document.getElementById("about");
-  window.scrollTo({ top: 2100, behavior: 'smooth' });
-
+  if (aboutSection) {
+    aboutSection.scrollIntoView({ behavior: 'smooth' });
   }
+}
 
 const handleProjectsClick = () => {
   const projectsSection = document.getElementById("projects");
-  window.scrollTo({ top: 2000, behavior: 'smooth' });
+  if (projectsSection) {
+    projectsSection.scrollIntoView({ behavior: 'smooth' });
+  }
 }
 
 const handleContactClick = () => {
@@ -25,7 +28,7 @@ const handleContactClick = () => {
 
 const Navbar = () => {
   return (
-    <nav className="bg-gray-900 bg-opacity-70 text-white p-6 fixed w-full z-50">
+    <nav className="bg-gray-900 bg-opacity-70 text-white p-6 fixed w-full z-20 top-0 left-0">
       <div className="max-w-[1800px] mx-auto flex justify-between items-center">
         <div className="text-lg font-bold">Samu Kirjonen</div>
         <div className="space-x-4">
@@ -46,6 +49,12 @@ const Navbar = () => {
             className="text-white hover:underline cursor-pointer"
           >
             Projects
+          </span>
+          <span
+            onClick={handleContactClick}
+            className="text-white hover:underline cursor-pointer"
+          >
+            Skills
           </span>
           <span
             onClick={handleContactClick}

@@ -1,31 +1,99 @@
-// src/components/Home.jsx
 import React from "react";
 import { motion } from "framer-motion";
 
-
 const Home = () => {
+  
+  const handleAboutClick = () => {
+    const aboutSection = document.getElementById("about");
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+  
+  const handleProjectsClick = () => {
+    const projectsSection = document.getElementById("projects");
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  const handleSkillsClick = () => {
+    const skillsSection = document.getElementById("skills");
+    if (skillsSection) {
+      skillsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+  
+  const handleContactClick = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
   return (
-    <div className="relative z-10 flex flex-col items-center justify-start min-h-screen pt-48"> 
-      <h1 className="font-sans text-white text-7xl font-semibold leading-snug mb-4">
-        <motion.div
-          initial={{ opacity: 0, x: -100 }} // Slide in from left
-          animate={{ opacity: 1, x: 0 }} // Animate to final position
-          exit={{ opacity: 0 }} // Fade out
-          transition={{ duration: 1 }} // Duration of the animation
-        >
-          Welcome to my portfolio
-        </motion.div>
-      </h1>
-      <h2 className="font-sans text-white text-4xl font-medium">
-        <motion.div
-          initial={{ opacity: 0, x: 100 }} // Slide in from right
-          animate={{ opacity: 1, x: 0 }} // Animate to final position
-          exit={{ opacity: 0 }} // Fade out
-          transition={{ duration: 1 }} // Duration of the animation
-        >
-          Explore my projects and skills!
-        </motion.div>
-      </h2>
+    <div className="relative z-10 flex flex-col items-center justify-between min-h-screen pt-48">
+      {/* Header Section */}
+      <div className="flex-grow">
+        <h1 className="text-white text-7xl font-sans font-bold leading-snug mb-4">
+          <motion.div
+            initial={{ opacity: 0, x: -100 }} // Slide in from left
+            animate={{ opacity: 1, x: 0 }} // Animate to final position
+            exit={{ opacity: 0 }} // Fade out
+            transition={{ duration: 1 }} // Duration of the animation
+          >
+            Welcome to my portfolio vaihda vielä otakiinni ja toinen public ja kato ettei api key jne näy
+          </motion.div>
+        </h1>
+        <h2 className="text-white font-sans text-4xl font-medium mb-12 text-center">
+          <motion.div
+            initial={{ opacity: 0, x: 100 }} // Slide in from right
+            animate={{ opacity: 1, x: 0 }} // Animate to final position
+            exit={{ opacity: 0 }} // Fade out
+            transition={{ duration: 1 }} // Duration of the animation
+          >
+            Explore my projects and skills!
+          </motion.div>
+        </h2>
+      </div>
+
+      {/* Small Grid Section */}
+      <div className="w-full flex justify-center mb-16">
+        <div className="grid grid-cols-4 gap-4">
+          <div className="bg-green-800 bg-opacity-50 border-2 border-gray-400 p-2 rounded-lg">
+            <img
+              src="../src/assets/images/about.png"
+              alt="about"
+              className="w-24 h-24 object-cover rounded-lg cursor-pointer"
+              onClick={handleAboutClick}
+            />
+          </div>
+          <div className="bg-green-800 bg-opacity-50 border-2 border-gray-400 p-2 rounded-lg">
+            <img
+              src="../src/assets/images/projects.png"
+              alt="projects"
+              className="w-24 h-24 object-cover rounded-lg cursor-pointer"
+              onClick={handleProjectsClick}
+            />
+          </div>
+          <div className="bg-green-800 bg-opacity-50 border-2 border-gray-400 p-2 rounded-lg">
+            <img
+              src="../src/assets/images/skill.png"
+              alt="skills"
+              className="w-24 h-24 object-cover rounded-lg cursor-pointer"
+              onClick={handleSkillsClick}
+            />
+          </div>
+          <div className="bg-green-800 bg-opacity-50 border-2 border-gray-400 p-2 rounded-lg">
+            <img
+              src="../src/assets/images/contact.png"
+              alt="contact me"
+              className="w-24 h-24 object-cover rounded-lg cursor-pointer"
+              onClick={handleContactClick}
+            />
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

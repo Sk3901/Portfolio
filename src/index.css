@@ -1,8 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/*
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
-
+body{
+    font-family: 'Noto Sans', sans-serif;
+}*/
 
 .accordion-main {
     cursor: pointer;
@@ -57,12 +61,97 @@ button:focus {
     transform: translate(4%, 0);
 }
 
-.about-box{   
-    background-color: black;  
-    opacity: 0.6;
+.about-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15rem;
+    margin-right: 14rem;
+}
+
+.about-title{
+    color: white;
+    text-align: left;
+    font-weight: bold;
+    padding-left: 30.5rem;
+    font-size: 2rem;
+    margin-bottom: 1rem;
 
 }
 
+.about-text{
+    text-align: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.about-text p{
+    margin-bottom: 1.7rem;
+    text-align: left;
+    margin-left: 10rem;
+    background-color: #1f2937;
+    padding: 0.8rem;
+    border-radius: 5px;
+    border-style: solid;
+}
+
+.about-line{
+    border-top: 0.2rem solid #aaa; 
+    width: 50%; 
+    margin: 3rem auto; 
+    opacity: 0.7; 
+}
+
+.about-projects{
+    text-align: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    padding-left: 25rem;
+    padding-right: 25rem;
+    margin-bottom: 10rem;
+    font-weight: 500;
+
+}
+
+.timeline {
+    position: relative;
+    margin-right: 1rem;
+    margin-bottom: 10rem;
+    padding: 20px 0;
+    width: 100%;
+
+  }
+  
+  .timeline-item {
+    position: relative;
+    padding: 10px 20px;
+    border-left: 2px solid #00d4ff;
+    margin-left: 1px;
+  }
+  
+  .timeline-date {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #00d4ff;
+  }
+  
+  .timeline-content {
+    background-color: #1f2937;
+    padding: 0.8rem;
+    border-radius: 5px;
+    color: white;
+  }
+
+.timeline h3{
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #00d4ff;
+    ;
+  }
+  
 .projects {
     display: flex;
     flex-direction: column;
@@ -72,7 +161,6 @@ button:focus {
     border-radius: 0.5rem;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color: #222; /* Darker background for contrast */
 }
 
 .projects:hover {
@@ -95,6 +183,11 @@ button:focus {
     line-height: 1.5rem;
     color: #ddd;
     margin-bottom: 1.5rem;
+}
+
+#skills{
+    position: relative;
+    z-index: 1;
 }
 
 
@@ -137,7 +230,6 @@ button:focus {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: black; /* Optional background color for visual clarity */
     border-radius: 100%; /* Make icons appear in circular containers */
     overflow: hidden; /* Ensures images don't spill out of the container */
 }
@@ -162,7 +254,7 @@ button:focus {
 }
 
 .card {
-    background-color: #fff;
+    background-color: #AECCE4;
     border-radius: 1rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -196,13 +288,13 @@ button:focus {
 .card-title {
     font-size: 1.25rem;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
     color: black
 }
 
 .card-description {
     font-size: 1rem;
-    color: #666;
+    color: black;
     margin-bottom: 15px;
 }
 
@@ -216,28 +308,29 @@ button:focus {
     font-weight: bold;
     text-transform: uppercase;
     transition: background 0.3s ease, transform 0.2s ease;
+    margin-bottom: 1rem;
 }
 
 #sourcecode:hover {
-    background: linear-gradient(90deg, #0066cc, #004aad);
+    background: linear-gradient(90deg, #004aad, #0066cc);
     transform: translateY(-3px);
 }
 
 /* Learn More Button */
 .learn-more-button {
-    padding: 0.8rem 1.5rem;
-    background-color: #004aad;
+    text-align: center;
+    align-items: center;
     color: white;
+    background: linear-gradient(90deg, #004aad, #0066cc);
+    padding: 0.8rem 1.5rem;
     border-radius: 1rem;
     font-weight: bold;
     text-transform: uppercase;
     transition: background 0.3s ease, transform 0.2s ease;
-    margin-top: 1rem;
-    width: 100%;
 }
 
 .learn-more-button:hover {
-    background: linear-gradient(90deg, #0066cc, #004aad);
+    background: linear-gradient(90deg, #004aad, #0066cc);
     transform: translateY(-3px);
 }
 
@@ -248,37 +341,41 @@ button:focus {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 999;
+    z-index: 10000;
 }
 
 .modal-title{
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: bold;
     margin: 0;
     text-align: center;
     color: black;
+    margin-top: 0rem;
 }
 
 .modal-title-underline{
     width: 30rem;
-    height: 1rem;
+    height: 0.5rem;
     background-color: blue;
-    margin: 3rem auto;
+    margin: 1rem auto;
     border-radius: 0.2rem;
 
 }
 .modal-content {
-    background-color: white;
+    background-color: #AECCE4;
+    color: #333;
     padding: 3rem;
     border-radius: 1rem;
     width: 40rem;
+    height: 52rem;
     max-width: 80%;
     text-align: center;
-    z-index: 1000;
+    z-index: 10001;
+    position: relative;
 }
 
 .modal-content h2 {
@@ -288,16 +385,48 @@ button:focus {
     font-weight: bold;
 }
 
+.modal-cards{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.modal-card {
+    background-color: #9ABDDC; /* Blue color */
+    color: white;
+    padding: 1rem;
+    border-radius: 1rem; /* Rounded corners (poker card-like) */
+    text-align: center;
+    width: 9rem; /* Smaller width for card size */
+    height: 13.3rem; /* Proportional height */
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5); /* Subtle shadow */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth hover effect */
+    display: flex;
+    flex-direction: column; /* Stack text vertically */
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+.modal-card:hover {
+    transform: scale(-1rem);
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+}
 .modal-card h3 {
     color: black;
     font-size: 1.2rem;
     font-weight: bold;
+    margin-bottom: 1rem;
+    margin-top: 0rem;
 }
 
 .modal-content p {
     font-size: 1rem;
     margin-bottom: 2rem;
     color: black;
+    justify-content: left;
+    text-align: left;
 }
 
 .modal-content button {
@@ -308,6 +437,8 @@ button:focus {
     border-radius: 1rem;
     cursor: pointer;
     transition: background 0.3s ease;
+    margin-top: 3rem;
+
 }
 
 .modal-content button:hover {
@@ -316,9 +447,7 @@ button:focus {
 
 .no-scroll {
     overflow: hidden;
-}
-
-
+}  
 
 @media only screen and (max-width: 786px) {
     .img-style {

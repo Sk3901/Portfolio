@@ -1,4 +1,3 @@
-// src/App.jsx
 import React from 'react';
 import Navbar from './components/Navbar';
 import About from './components/About';
@@ -7,8 +6,6 @@ import VideoBg from './components/VideoBg';
 import Home from './components/Home';
 import Contact from './components/Contact';
 import './index.css';
-import Lottie from 'lottie-react';
-import animationData from './assets/Animation.json';
 import InfiniteSliderComponent from './components/skills'; // Correct import
 
 const App = () => {
@@ -39,9 +36,6 @@ const App = () => {
         { content: 'trello', src: '/src/assets/images/trello1.png' },
         { content: 'vscode', src: '/src/assets/images/vscode1.png' },
         { content: 'ccna', src: '/src/assets/images/ccna1.png' },
-
-
-        // Add more skills and images as needed
       ],
       width: 170,
       margin: 20,
@@ -58,39 +52,32 @@ const App = () => {
       <VideoBg />
       <Navbar />
       <Home />
-      <div className="flex justify-center items-center h-1/2 -mt-60">
-        <Lottie
-          animationData={animationData}
-          style={{ width: '100px', height: '300px' }}
-        />
-      </div>
-          <About />
-  
+      <About />
+
       <section id="projects" className="relative z-10 p-10 bg-gray-900 bg-opacity-60 text-white">
         <div className="max-w-4xl mx-auto">
-          <div className="text-3xl font-bold mb-4">Projects</div>
+          {/* Updated font size to text-[2rem] */}
+          <div className="text-[2rem] font-bold mb-4">Projects</div>
           <Projects />
         </div>
       </section>
 
-      {/* Skills Section with InfiniteSlider */}
       <section id="skills" className="relative z-10 p-10 bg-gray-900 bg-opacity-60 text-white">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-3xl font-bold mb-4">Skills</div>
-          
-          {/* Add the InfiniteSlider component here */}
+        <div className="max-w-4xl mx-auto mt-40">
+          {/* Updated font size to text-[2rem] */}
+          <div className="text-[2rem] font-bold mb-4">Skills</div>
           <InfiniteSliderComponent config={sliderConfig} />
         </div>
       </section>
 
       <section id="contact" className="relative z-10 p-10 bg-gray-900 bg-opacity-60 text-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-4">Contact Me</h2>
+          {/* Updated font size to text-[2rem] */}
+          <h2 className="text-[2rem] font-bold mb-4">Contact Me</h2>
           <Contact />
         </div>
       </section>
 
-      {/* Footer-like bar at the bottom */}
       <div className="bg-gray-900 bg-opacity-70 text-white p-4 relative z-10">
         <div className="max-w-[1800px] mx-auto flex justify-between items-center">
           <div className="text-lg font-bold">Samu Kirjonen</div>
