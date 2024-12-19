@@ -50,6 +50,7 @@ const App = () => {
   return (
     <div className="bg-transparent min-h-screen relative">
       <VideoBg />
+      
       <Navbar />
       <Home />
       <About />

@@ -42,7 +42,7 @@ const Home = () => {
             exit={{ opacity: 0 }} // Fade out
             transition={{ duration: 1 }} // Duration of the animation
           >
-            Welcome to my portfolio vaihda vielä otakiinni ja toinen public ja kato ettei api key jne näy
+            Welcome to my portfolio vaihda vielä portf publiccii
           </motion.div>
         </h1>
         <h2 className="text-white font-sans text-4xl font-medium mb-12 text-center">

@@ -6,6 +6,7 @@ const About = () => {
       <div className="about-title">About Me</div>
       <div className="about-container">
         {/* About Text */}
+    
         <div className="about-text">
           <p>
             Welcome to my website! I’m a software development student with a strong passion for creating functional and impactful applications. I enjoy turning ideas into reality by developing innovative software solutions that solve real-world problems.
@@ -34,7 +35,7 @@ const About = () => {
             <div className="timeline-date">2022</div>
             <div className="timeline-content">
               <h3>First Projects</h3>
-              <p>Developed my first website and explored JavaScript.</p>
+              <p>Developed my first website and explored JavaScript, Python, HTML, CSS and databases</p>
             </div>
           </div>
           <div className="timeline-item">

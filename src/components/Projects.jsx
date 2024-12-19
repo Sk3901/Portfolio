@@ -35,7 +35,7 @@ const projectsData = [
         title: "Ota Kiinni Jos Saat",
         description: "Fullstack game based on boardgame Scotland Yard. 1-3 players that can be either human or AI players",
         image: { src: 'src/assets/images/ota_kiinni_jos_saat.png', alt: "Image of ota kiinni jos saat project" },
-        sourceCode: "https://github.com/Sk3901/Ota_kiinni_jos_saat",
+        sourceCode: "https://github.com/Sk3901/OtaKiinniJosSaat",
         categories: [
             {
                 title: "Frontend",

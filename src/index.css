@@ -97,13 +97,6 @@ button:focus {
     border-style: solid;
 }
 
-.about-line{
-    border-top: 0.2rem solid #aaa; 
-    width: 50%; 
-    margin: 3rem auto; 
-    opacity: 0.7; 
-}
-
 .about-projects{
     text-align: center;
     justify-content: center;
@@ -371,7 +364,7 @@ button:focus {
     padding: 3rem;
     border-radius: 1rem;
     width: 40rem;
-    height: 52rem;
+    height: 44rem;
     max-width: 80%;
     text-align: center;
     z-index: 10001;
@@ -430,14 +423,14 @@ button:focus {
 }
 
 .modal-content button {
-    padding: 1rem 2rem;
+    padding: 0.7rem 1.7rem;
     background-color: #004aad;
     color: white;
     border: none;
     border-radius: 1rem;
     cursor: pointer;
     transition: background 0.3s ease;
-    margin-top: 3rem;
+    margin-top: 1.3rem;
 
 }
 
