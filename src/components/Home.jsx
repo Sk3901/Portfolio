@@ -62,7 +62,7 @@ const Home = () => {
         <div className="grid grid-cols-4 gap-4">
           <div className="bg-green-800 bg-opacity-50 border-2 border-gray-400 p-2 rounded-lg">
             <img
-              src="../src/assets/images/about.png"
+              src="/images/about.png"
               alt="about"
               className="w-24 h-24 object-cover rounded-lg cursor-pointer"
               onClick={handleAboutClick}
@@ -70,7 +70,7 @@ const Home = () => {
           </div>
           <div className="bg-green-800 bg-opacity-50 border-2 border-gray-400 p-2 rounded-lg">
             <img
-              src="../src/assets/images/projects.png"
+              src="/images/projects.png"
               alt="projects"
               className="w-24 h-24 object-cover rounded-lg cursor-pointer"
               onClick={handleProjectsClick}
@@ -78,7 +78,7 @@ const Home = () => {
           </div>
           <div className="bg-green-800 bg-opacity-50 border-2 border-gray-400 p-2 rounded-lg">
             <img
-              src="../src/assets/images/skill.png"
+              src="/images/skill.png"
               alt="skills"
               className="w-24 h-24 object-cover rounded-lg cursor-pointer"
               onClick={handleSkillsClick}
@@ -86,7 +86,7 @@ const Home = () => {
           </div>
           <div className="bg-green-800 bg-opacity-50 border-2 border-gray-400 p-2 rounded-lg">
             <img
-              src="../src/assets/images/contact.png"
+              src="/images/contact.png"
               alt="contact me"
               className="w-24 h-24 object-cover rounded-lg cursor-pointer"
               onClick={handleContactClick}

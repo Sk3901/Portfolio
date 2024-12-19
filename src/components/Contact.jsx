@@ -1,7 +1,7 @@
 import React from "react";
-import githubLogo from "../assets/images/github1.png";
-import linkedinLogo from "../assets/images/linkedin1.png";
-import mailLogo from "../assets/images/mail1.png";
+import githubLogo from "/images/github1.png";
+import linkedinLogo from "/images/linkedin1.png";
+import mailLogo from "/images/mail1.png";
 
 const Contact = () => {
   const openLink = (url) => {
