@@ -5,7 +5,7 @@ const projectsData = [
         id: 1,
         title: "Portfolio Page",
         description: "Personal portfolio showcasing skills and selfmade projects. Designed with a focus on user experience.",
-        image: { src: 'src/assets/images/Portfolio.png', alt: "Image of portfolio project" },
+        image: { src: '/images/Portfolio.png', alt: "Image of portfolio project" },
         sourceCode: "https://github.com/Sk3901/portfolio",
         categories: [
             {
@@ -34,7 +34,7 @@ const projectsData = [
         id: 2,
         title: "Ota Kiinni Jos Saat",
         description: "Fullstack game based on boardgame Scotland Yard. 1-3 players that can be either human or AI players",
-        image: { src: 'src/assets/images/ota_kiinni_jos_saat.png', alt: "Image of ota kiinni jos saat project" },
+        image: { src: '/images/Ota_Kiinni_Jos_Saat.png', alt: "Image of ota kiinni jos saat project" },
         sourceCode: "https://github.com/Sk3901/OtaKiinniJosSaat",
         categories: [
             {
