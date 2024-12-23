@@ -1,8 +1,6 @@
-# Samu Kirjonen Portfolio
+# 🌐 View my live portfolio: [Samu Kirjonen Portfolio](https://samu-kirjonen-portfolio.netlify.app/)
 
 Welcome to my personal portfolio! This site showcases my web development skills, projects, and contact information.
-
-# 🌐 View my live portfolio: [Samu Kirjonen Portfolio](https://samu-kirjonen-portfolio.netlify.app/)
 
 ---
 
