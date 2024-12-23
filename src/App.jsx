@@ -80,7 +80,7 @@ const App = () => {
       </section>
 
       <div className="bg-gray-900 bg-opacity-70 text-white p-4 relative z-10">
-        <div className="max-w-[1800px] mx-auto flex justify-between items-center">
+        <div className="max-w-[112.5rem] mx-auto flex justify-between items-center">
           <div className="text-lg font-bold">Samu Kirjonen</div>
           <div className="text-sm">© 2024</div>
         </div>
