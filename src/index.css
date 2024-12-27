@@ -69,15 +69,24 @@ button:focus {
     margin-right: 14rem;
 }
 
-.about-title{
+.about-title {
     color: white;
-    text-align: left;
+    text-align: center;
     font-weight: bold;
-    padding-left: 30.5rem;
+    padding: 1rem; /* Adjust padding for inner spacing */
     font-size: 2rem;
-    margin-bottom: 1rem;
-
+    margin: 0 auto 1rem auto; /* Centers the element */
+    margin-bottom: 2.5rem;
+    border-radius: 1rem;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #00d4ff;    ;
+    background-color: black;
+    width: 20%; /* Set to a percentage of the parent container */
+    margin-left: 5rem;
 }
+
+
 
 .about-text{
     text-align: center;
@@ -90,11 +99,15 @@ button:focus {
 .about-text p{
     margin-bottom: 1.7rem;
     text-align: left;
-    margin-left: 10rem;
-    background-color: #1f2937;
+    margin-left: 5rem;
     padding: 0.8rem;
     border-radius: 0.3rem;
     border-style: solid;
+    border-radius: 1rem;
+    border-width: 2px;
+    border-color: #00d4ff;    ;
+    background-color: black;
+
 }
 
 .about-projects{
@@ -111,9 +124,9 @@ button:focus {
 
 .timeline {
     position: relative;
-    margin-right: 1rem;
+    margin-left: 1rem;
     margin-bottom: 10rem;
-    padding: 1.2rem 0;
+    padding: 0.5rem 0;
     width: 100%;
 
   }
@@ -126,14 +139,15 @@ button:focus {
   }
   
   .timeline-date {
+    font-size: 1.2rem;
     font-weight: bold;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.5rem;
     color: #00d4ff;
   }
   
   .timeline-content {
-    background-color: #1f2937;
-    padding: 0.8rem;
+    background-color: black;
+    padding: 0.9rem;
     border-radius: 0.3rem;
     color: white;
   }
@@ -143,6 +157,11 @@ button:focus {
     font-weight: bold;
     color: #00d4ff;
     ;
+  }
+  
+  .timeline p{
+    font-size: 1rem;
+    margin-top: 0.5rem;
   }
   
 .projects {
@@ -155,6 +174,31 @@ button:focus {
     box-shadow: 0rem 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.projects-header{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.projects-title {
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    padding: 1rem; /* Adjust padding for inner spacing */
+    font-size: 2rem;
+    margin: 0 auto 1rem auto; /* Centers the element */
+    margin-bottom: 2.5rem;
+    border-radius: 1rem;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #00d4ff;    ;
+    background-color: black;
+    width: 20%; /* Set to a percentage of the parent container */
+    margin-left: 5rem;
+}
+
+
 
 .projects:hover {
     transform: translateY(-0.7rem);
@@ -181,6 +225,24 @@ button:focus {
 #skills{
     position: relative;
     z-index: 1;
+}
+
+
+.skills-title {
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    padding: 1rem; /* Adjust padding for inner spacing */
+    font-size: 2rem;
+    margin: 0 auto 1rem auto; /* Centers the element */
+    margin-bottom: 2.5rem;
+    border-radius: 1rem;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #00d4ff;    ;
+    background-color: black;
+    width: 20%; /* Set to a percentage of the parent container */
+    margin-left: 5rem;
 }
 
 
@@ -215,6 +277,26 @@ button:focus {
     padding-bottom: 2rem;
     background-color: white;
     opacity: 0.6;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-title {
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    padding: 1rem; /* Adjust padding for inner spacing */
+    font-size: 2rem;
+    margin: 0 auto 1rem auto; /* Centers the element */
+    margin-bottom: 2.5rem;
+    border-radius: 1rem;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #00d4ff;    ;
+    background-color: black;
+    width: 20%; /* Set to a percentage of the parent container */
+    margin-left: 5rem;
 }
 
 .contact div {
@@ -241,24 +323,49 @@ button:focus {
 /* Grid for Cards */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.25rem;
-    justify-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Creates responsive grid */
+    gap: 3rem;
+    justify-items: center; /* Centers items in each grid cell */
+    justify-content: center; /* Ensures grid content is centered */
+    max-width: 100%; /* Ensures grid takes full width of parent */
+    margin: 0 auto; /* Centers the grid horizontally */
 }
 
+/* Individual project card styles */
 .card {
-    background-color: #AECCE4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0rem 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 400px; /* Controls max width of card */
+}
+
+
+
+.card {
+    background-color: black;
     border-radius: 1rem;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #00d4ff;  
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     width: 100%;
-    max-width: 20rem;
-    height: 35rem;
+    max-width: 350px; /* Set a max width for cards to avoid stretching too much */
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-left: 71rem;
+
 }
+
 
 .card:hover {
     transform: translateY(-1rem);
@@ -272,7 +379,7 @@ button:focus {
 }
 
 .card-body {
-    padding: 1.25rem;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -281,13 +388,14 @@ button:focus {
 .card-title {
     font-size: 1.25rem;
     font-weight: bold;
+    margin-top: 1rem;
     margin-bottom: 1rem;
-    color: black
+    color: white
 }
 
 .card-description {
     font-size: 1rem;
-    color: black;
+    color: white;
     margin-bottom: 1rem;
 }
 
@@ -309,6 +417,7 @@ button:focus {
     transform: translateY(-0.2rem);
 }
 
+
 /* Learn More Button */
 .learn-more-button {
     text-align: center;
@@ -327,7 +436,6 @@ button:focus {
     transform: translateY(-0.2rem);
 }
 
-/* Modal Styles */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -367,8 +475,12 @@ button:focus {
     height: 44rem;
     max-width: 80%;
     text-align: center;
-    z-index: 10001;
     position: relative;
+    z-index: 10001;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .modal-content h2 {

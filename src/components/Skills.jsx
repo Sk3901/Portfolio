@@ -84,7 +84,7 @@ class InfiniteSlider {
                 position: relative;
                 width: 100%;
                 height: ${this.outerContainer.height}px;
-                max-width: 1200px;
+                max-width: 1000px;
                 margin: 50px auto;
                 overflow: hidden;
                 display: grid;
@@ -194,7 +194,15 @@ const InfiniteSliderComponent = ({ config }) => {
         };
     }, [config]);
 
-    return <div ref={sliderRef} className="accordion-main"></div>;
-};
-
-export default InfiniteSliderComponent;
+    return (
+        <section id="skills" className='relative'>
+          {/* Title Section */}
+          <div className="skills-title">Skills</div>
+          
+          {/* Infinite Slider Section */}
+          <div ref={sliderRef} className="accordion-main"></div>
+        </section>
+      );
+    };
+    
+    export default InfiniteSliderComponent;

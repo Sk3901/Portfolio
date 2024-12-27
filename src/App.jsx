@@ -37,8 +37,6 @@ const App = () => {
         { content: 'vscode', src: '/images/vscode1.png' },
         { content: 'ccna', src: '/images/ccna1.png' },
       ],
-      /*width: 170,*/
-      /*margin: 20,*/
     },
     sliderControls: {
       autoStart: true,
@@ -54,31 +52,21 @@ const App = () => {
       <Navbar />
       <Home />
       <About />
-
-      <section id="projects" className="relative z-10 p-10 bg-gray-900 bg-opacity-60 text-white">
-        <div className="max-w-4xl mx-auto">
-          {/* Updated font size to text-[2rem] */}
-          <div className="text-[2rem] font-bold mb-4">Projects</div>
-          <Projects />
-        </div>
-      </section>
-
+      <Projects />
+      
+      {/* Skills Section with Infinite Slider */}
       <section id="skills" className="relative z-10 p-10 bg-gray-900 bg-opacity-60 text-white">
-        <div className="max-w-4xl mx-auto mt-40">
-          {/* Updated font size to text-[2rem] */}
-          <div className="text-[2rem] font-bold mb-4">Skills</div>
           <InfiniteSliderComponent config={sliderConfig} />
-        </div>
       </section>
 
+
+      {/* Contact Section */}
       <section id="contact" className="relative z-10 p-10 bg-gray-900 bg-opacity-60 text-white">
-        <div className="max-w-4xl mx-auto">
-          {/* Updated font size to text-[2rem] */}
-          <h2 className="text-[2rem] font-bold mb-4">Contact Me</h2>
+          <div className="contact-title">Contact Me</div>
           <Contact />
-        </div>
       </section>
 
+      {/* Footer */}
       <div className="bg-gray-900 bg-opacity-70 text-white p-4 relative z-10">
         <div className="max-w-[112.5rem] mx-auto flex justify-between items-center">
           <div className="text-lg font-bold">Samu Kirjonen</div>

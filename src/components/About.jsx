@@ -35,21 +35,21 @@ const About = () => {
             <div className="timeline-date">2022</div>
             <div className="timeline-content">
               <h3>First Projects</h3>
-              <p>Developed my first website and explored JavaScript, Python, HTML, CSS and databases</p>
-            </div>
-          </div>
-          <div className="timeline-item">
-            <div className="timeline-date">2023</div>
-            <div className="timeline-content">
-              <h3>Fullstack open - University of Helsinki</h3>
-              <p>Learning fullstack principles.</p>
+              <p>Developed my first website and explored JavaScript, Python, HTML, CSS and databases.</p>
             </div>
           </div>
           <div className="timeline-item">
             <div className="timeline-date">2024</div>
             <div className="timeline-content">
               <h3>Projects - Portfolio and Ota Kiinni Jos Saat</h3>
-              <p>Creating projects diibadaaba dirli</p>
+              <p>Creating portfolio webpage and a fullstack game.</p>
+            </div>
+          </div>
+          <div className="timeline-item">
+            <div className="timeline-date">2025</div>
+            <div className="timeline-content">
+              <h3>Began majoring in Smart IoT Systems: Embedded IoT Devices</h3>
+              <p>Building expertise in IoT architecture, embedded systems, and smart device integration.</p>
             </div>
           </div>
           <div className="timeline-item">

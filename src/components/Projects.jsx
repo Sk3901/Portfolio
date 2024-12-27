@@ -134,8 +134,8 @@ const Projects = () => {
     };
 
     return (
-        <section id="projects" className="relative z-10 p-10 bg-gray-900 bg-opacity-0 text-white">
-            <div className="projects-header">
+        <section id="projects" className="relative z-10 p-10 bg-gray-900 bg-opacity-60 text-white">
+            <div className="projects-title">Projects
             </div>
             <div className="projects-grid">
                 {projectsData.map((project) => (
