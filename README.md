@@ -21,3 +21,5 @@ Welcome to my personal portfolio! This site showcases my web development skills,
 - **HTML**: For styling.
 - **JavaScript**: For interactivity.
 - **React Icons**: For additional icons.
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d5b6d6b3-4eab-4907-b3b2-8b24a4053d72/deploy-status)](https://app.netlify.com/sites/samu-kirjonen-portfolio/deploys)
