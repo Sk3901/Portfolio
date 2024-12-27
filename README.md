@@ -1,8 +1,25 @@
-# React + Vite
+# 🌐 View my live portfolio: [Samu Kirjonen Portfolio](https://samu-kirjonen-portfolio.netlify.app/)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my personal portfolio! This site showcases my web development skills, projects, and contact information.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
+
+- **Home**: Homepage.
+- **About**: More details on my background and expertise.
+- **Projects**: Display of my work with GitHub links.
+- **Skills**: A rotating carousel of my technical skills.
+- **Contact**: A form for reaching out to me.
+
+---
+
+## 🛠 Technologies Used
+
+- **React**: For building the user interface.
+- **Tailwind CSS**: For styling.
+- **HTML**: For styling.
+- **JavaScript**: For interactivity.
+- **React Icons**: For additional icons.
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d5b6d6b3-4eab-4907-b3b2-8b24a4053d72/deploy-status)](https://app.netlify.com/sites/samu-kirjonen-portfolio/deploys)
