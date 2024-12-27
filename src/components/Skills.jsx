@@ -57,11 +57,12 @@ class InfiniteSlider {
 
             for (let item of this.elements.items) {
                 elementsHTML += `
-                    <div class="inf-slider__slide image-style">
+                    <div class="inf-slider__slide image-style" data-content="${item.content}">
                         <img src="${item.src}" alt="${item.content}" class="image-style" />
                     </div>
                 `;
             }
+            
 
             const containerHTML = `
                 <div class="${this.innerContainer.selector.replace('.', '')} ${containerSelector}"

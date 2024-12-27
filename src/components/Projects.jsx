@@ -119,24 +119,22 @@ const Card = ({ title, description, image, sourceCode, onClick }) => {
     );
 };
 
-const Projects = () => {
-    const [modalOpen, setModalOpen] = React.useState(false);
+const Projects = ({ isModalOpen, setIsModalOpen }) => {
     const [selectedProject, setSelectedProject] = React.useState(null);
 
     const openModal = (project) => {
         setSelectedProject(project);
-        setModalOpen(true);
+        setIsModalOpen(true); // Update state to indicate modal is open
     };
 
     const closeModal = () => {
-        setModalOpen(false);
         setSelectedProject(null);
+        setIsModalOpen(false); // Update state to indicate modal is closed
     };
 
     return (
         <section id="projects" className="relative z-10 p-10 bg-gray-900 bg-opacity-60 text-white">
-            <div className="projects-title">Projects
-            </div>
+            <div className="projects-title">Projects</div>
             <div className="projects-grid">
                 {projectsData.map((project) => (
                     <Card 
@@ -149,9 +147,10 @@ const Projects = () => {
                     />
                 ))}
             </div>
-            <Modal isOpen={modalOpen} project={selectedProject} closeModal={closeModal} />
+            <Modal isOpen={isModalOpen} project={selectedProject} closeModal={closeModal} />
         </section>
     );
 };
 
 export default Projects;
+

@@ -26,9 +26,13 @@ const handleContactClick = () => {
   }
 }
 
-const Navbar = () => {
+const Navbar = ({ isModalOpen }) => {
   return (
-    <nav className="bg-gray-900 bg-opacity-70 text-white p-6 fixed w-full z-20 top-0 left-0">
+    <nav
+      className={`bg-gray-900 bg-opacity-70 text-white p-6 fixed w-full z-20 top-0 left-0 transition-all duration-300 ${
+        isModalOpen ? 'hidden' : ''
+      }`}
+    >
       <div className="max-w-[1800px] mx-auto flex justify-between items-center">
         <div className="text-lg font-bold">Samu Kirjonen</div>
         <div className="space-x-4">

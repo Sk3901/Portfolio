@@ -60,7 +60,7 @@ const Home = () => {
       {/* Small Grid Section */}
       <div className="w-full flex justify-center mb-16">
         <div className="grid grid-cols-4 gap-4">
-          <div className="bg-green-800 bg-opacity-50 border-2 border-gray-400 p-2 rounded-lg">
+          <div className="bg-green-800 bg-opacity-50 border-2 border-cyan-400 p-2 rounded-lg">
             <img
               src="/images/about.png"
               alt="about"
@@ -68,7 +68,7 @@ const Home = () => {
               onClick={handleAboutClick}
             />
           </div>
-          <div className="bg-green-800 bg-opacity-50 border-2 border-gray-400 p-2 rounded-lg">
+          <div className="bg-green-800 bg-opacity-50 border-2 border-cyan-400 p-2 rounded-lg">
             <img
               src="/images/projects.png"
               alt="projects"
@@ -76,7 +76,7 @@ const Home = () => {
               onClick={handleProjectsClick}
             />
           </div>
-          <div className="bg-green-800 bg-opacity-50 border-2 border-gray-400 p-2 rounded-lg">
+          <div className="bg-green-800 bg-opacity-50 border-2 border-cyan-400 p-2 rounded-lg">
             <img
               src="/images/skill.png"
               alt="skills"
@@ -84,7 +84,7 @@ const Home = () => {
               onClick={handleSkillsClick}
             />
           </div>
-          <div className="bg-green-800 bg-opacity-50 border-2 border-gray-400 p-2 rounded-lg">
+          <div className="bg-green-800 bg-opacity-50 border-2 border-cyan-400 p-2 rounded-lg">
             <img
               src="/images/contact.png"
               alt="contact me"
