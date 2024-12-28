@@ -18,7 +18,7 @@ const About = () => {
             I’m constantly exploring new tools, programming languages, and techniques to expand my skillset. My focus is on creating clean, efficient, and scalable solutions that deliver results.
           </p>
           <p>
-            I’m always open to new opportunities to collaborate, build exciting projects, and continue improving as a developer. Thank you for visiting my website!
+            I’m always open to new opportunities, build exciting projects, and continue improving as a developer. Thank you for visiting my website!
           </p>
         </div>
 

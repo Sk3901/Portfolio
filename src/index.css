@@ -417,7 +417,7 @@ button:focus {
 }
 
 .card-body {
-    padding: 1rem;
+    padding: 1.3rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -488,24 +488,29 @@ button:focus {
 }
 
 .modal-title{
+    background-color: black;
+    border-radius: 1rem;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #00d4ff;  
     font-size: 1.5rem;
     font-weight: bold;
+    padding: 0.8rem;
     margin: 0;
     text-align: center;
-    color: black;
     margin-top: 0rem;
 }
 
 .modal-title-underline{
     width: 30rem;
     height: 0.5rem;
-    background-color: blue;
+    background-color: #00d4ff;
     margin: 1rem auto;
     border-radius: 0.2rem;
 
 }
 .modal-content {
-    background-color: #AECCE4;
+    background: linear-gradient(to top left, #1c1c1c, #4a4a4a);
     color: #333;
     padding: 3rem;
     border-radius: 1rem;
@@ -523,8 +528,8 @@ button:focus {
 
 .modal-content h2 {
     font-size: 1.5rem;
-    margin-bottom: 2rem;
-    color: black;
+    margin-bottom: 1.4rem;
+    color: white;
     font-weight: bold;
 }
 

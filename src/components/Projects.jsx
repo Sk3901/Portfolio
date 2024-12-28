@@ -10,7 +10,7 @@ const projectsData = [
         categories: [
             {
                 title: "Frontend",
-                content: "HTML, CSS, JavaScript"
+                content: "HTML, CSS, JavaScript."
             },
             {
                 title: "Tailwind",
@@ -21,12 +21,12 @@ const projectsData = [
                 content: "Built with React for dynamic UI and component management."
             },
             {
-                title: "Version control",
+                title: "VSC",
                 content: "Git for version control and GitHub for project hosting."
             },
             {
                 title: "Deployment",
-                content: "Deployed the application using platforms like Netlify and Heroku."
+                content: "Deployed the application using Netlify."
             }
         ]
     },
