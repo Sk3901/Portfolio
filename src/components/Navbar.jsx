@@ -38,31 +38,31 @@ const Navbar = ({ isModalOpen }) => {
         <div className="space-x-4">
           <span
             onClick={handleHomeClick}
-            className="text-white hover:underline cursor-pointer"
+            className="NavButton"
           >
             Home
           </span>
           <span
             onClick={handleAboutClick}
-            className="text-white hover:underline cursor-pointer"
+            className="NavButton"
           >
             About
           </span>
           <span
             onClick={handleProjectsClick}
-            className="text-white hover:underline cursor-pointer"
+            className="NavButton"
           >
             Projects
           </span>
           <span
             onClick={handleContactClick}
-            className="text-white hover:underline cursor-pointer"
+            className="NavButton"
           >
             Skills
           </span>
           <span
             onClick={handleContactClick}
-            className="text-white hover:underline cursor-pointer"
+            className="NavButton"
           >
             Contact
           </span>
