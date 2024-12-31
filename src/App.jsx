@@ -62,12 +62,12 @@ const App = () => {
       <Projects isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
       
       {/* Skills Section with Infinite Slider */}
-      <section id="skills" className="relative z-10 p-10 bg-gray-900 bg-opacity-60 text-white">
+      <section id="skills" className="skills">
         <InfiniteSliderComponent config={sliderConfig} />
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="relative z-10 p-10 bg-gray-900 bg-opacity-60 text-white">
+      <section id="contact" className="contact-section">
         <div className="contact-title">Contact Me</div>
         <Contact />
       </section>

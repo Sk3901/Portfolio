@@ -133,7 +133,7 @@ const Projects = ({ isModalOpen, setIsModalOpen }) => {
     };
 
     return (
-        <section id="projects" className="relative z-10 p-10 bg-gray-900 bg-opacity-60 text-white">
+        <section id="projects" className="projects">
             <div className="projects-title">Projects</div>
             <div className="projects-grid">
                 {projectsData.map((project) => (
