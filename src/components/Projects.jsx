@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useState } from 'react';
+import Modal from './Modal'; // Import the Modal component
 
 const projectsData = [
     {
@@ -33,7 +34,7 @@ const projectsData = [
     {
         id: 2,
         title: "Ota Kiinni Jos Saat",
-        description: "Fullstack game based on boardgame Scotland Yard. 1-3 players that can be either human or AI players",
+        description: "Fullstack game based on boardgame Scotland Yard. 1-3 players that can be either human or AI players.",
         image: { src: '/images/Ota_Kiinni_Jos_Saat.png', alt: "Image of ota kiinni jos saat project" },
         sourceCode: "https://github.com/Sk3901/OtaKiinniJosSaat",
         categories: [
@@ -65,55 +66,52 @@ const projectsData = [
     }
 ];
 
-const Modal = ({ isOpen, project, closeModal }) => {
-    useEffect(() => {
-        if (isOpen) {
-            document.body.classList.add("no-scroll");
-        } else {
-            document.body.classList.remove("no-scroll");
-        }
-
-        return () => document.body.classList.remove("no-scroll");
-    }, [isOpen]);
-
-    if (!isOpen) return null;
-
-    return (
-        <div className="modal-overlay" onClick={closeModal}>
-            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                <h2 className="modal-title">{project.title}</h2>
-                <div className="modal-title-underline"></div>
-                <div className="modal-cards">
-                    {project.categories.map((category, index) => (
-                        <div className="modal-card" key={index}>
-                            <h3>{category.title}</h3>
-                            <p>{category.content}</p>
-                        </div>
-                    ))}
-                </div>
-                <button onClick={closeModal}>Close</button>
-            </div>
-        </div>
-    );
+const fitsignProject = {
+    id: 3,
+    title: "FitSign Oy",
+    description: "I worked on an existing WordPress site and updated the content and design on several pages. Such as the front page and services page.",
+    image: { src: '/images/FitSign.png', alt: "Image of FitSign page" },
+    siteUrl: "https://www.fitsign.fi"
 };
 
-const Card = ({ title, description, image, sourceCode, onClick }) => {
+const Card = ({ title, description, image, sourceCode, siteUrl, onClick }) => {
     const { src, alt } = image;
+
     return (
         <div className="card">
             <img src={src} alt={alt} className="card-image" />
             <div className="card-body">
                 <div className="card-title">{title}</div>
                 <div className="card-description">{description}</div>
-                <a href={sourceCode} id="sourcecode" target="_blank" rel="noopener noreferrer">
-                    Source Code
-                </a>
-                <button 
-                    className="learn-more-button"
-                    onClick={onClick}
-                >
-                    Learn More
-                </button>
+                {siteUrl ? (
+                    <a
+                        href={siteUrl}
+                        id="site"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="site-button"
+                    >
+                        Visit website
+                    </a>
+                ) : (
+                    <>
+                        <a
+                            href={sourceCode}
+                            id="sourcecode"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="source-code-button"
+                        >
+                            Source Code
+                        </a>
+                        <button
+                            className="learn-more-button"
+                            onClick={onClick}
+                        >
+                            Learn More
+                        </button>
+                    </>
+                )}
             </div>
         </div>
     );
@@ -124,20 +122,21 @@ const Projects = ({ isModalOpen, setIsModalOpen }) => {
 
     const openModal = (project) => {
         setSelectedProject(project);
-        setIsModalOpen(true); // Update state to indicate modal is open
+        setIsModalOpen(true);
     };
 
     const closeModal = () => {
         setSelectedProject(null);
-        setIsModalOpen(false); // Update state to indicate modal is closed
+        setIsModalOpen(false);
     };
 
     return (
         <section id="projects" className="projects">
             <div className="projects-title">Projects</div>
             <div className="projects-grid">
+                {/* Render main projects */}
                 {projectsData.map((project) => (
-                    <Card 
+                    <Card
                         key={project.id}
                         title={project.title}
                         description={project.description}
@@ -146,11 +145,27 @@ const Projects = ({ isModalOpen, setIsModalOpen }) => {
                         onClick={() => openModal(project)}
                     />
                 ))}
+
+                {/* Render FitSign project separately */}
+                <Card
+                    title={fitsignProject.title}
+                    description={fitsignProject.description}
+                    image={fitsignProject.image}
+                    siteUrl={fitsignProject.siteUrl}
+                    onClick={() => openModal(fitsignProject)}
+                />
             </div>
-            <Modal isOpen={isModalOpen} project={selectedProject} closeModal={closeModal} />
+
+            {/* Render the Modal component */}
+            {isModalOpen && selectedProject && (
+                <Modal
+                    isOpen={isModalOpen}
+                    closeModal={closeModal}
+                    project={selectedProject}
+                />
+            )}
         </section>
     );
 };
 
 export default Projects;
-

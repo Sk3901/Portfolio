@@ -41,10 +41,11 @@ const About = () => {
           <div className="timeline-item">
             <div className="timeline-date">2024</div>
             <div className="timeline-content">
-              <h3>Projects - Portfolio and Ota Kiinni Jos Saat</h3>
-              <p>Creating portfolio webpage and a fullstack game.</p>
+              <h3>Projects - Portfolio, Ota Kiinni Jos Saat, Fitsign Oy</h3>
+              <p>Creating portfolio webpage, fullstack game and modifying WordPress website.</p>
             </div>
           </div>
+      
           <div className="timeline-item">
             <div className="timeline-date">2025</div>
             <div className="timeline-content">

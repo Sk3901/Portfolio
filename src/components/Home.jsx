@@ -37,20 +37,20 @@ const Home = () => {
       <div className="flex-grow">
         <h1 className="text-white text-7xl font-sans font-bold leading-snug mb-4">
           <motion.div
-            initial={{ opacity: 0, x: -100 }} 
+            initial={{ opacity: 0, x: -500 }} 
             animate={{ opacity: 1, x: 0 }} 
             exit={{ opacity: 0 }}
-            transition={{ duration: 1 }} 
+            transition={{ duration: 4 }} 
           >
             Welcome to my portfolio!
           </motion.div>
         </h1>
         <h2 className="text-white font-sans text-4xl font-medium mb-12 text-center">
           <motion.div
-            initial={{ opacity: 0, x: 100 }} 
+            initial={{ opacity: 0, x: 500 }} 
             animate={{ opacity: 1, x: 0 }} 
             exit={{ opacity: 0 }} 
-            transition={{ duration: 1 }} 
+            transition={{ duration: 4 }} 
           >
             Explore my projects and skills!
           </motion.div>
