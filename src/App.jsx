@@ -54,25 +54,21 @@ const App = () => {
     <div className="bg-transparent min-h-screen relative">
       <VideoBg />
       
-      {/* Pass isModalOpen as a prop to Navbar */}
       <Navbar isModalOpen={isModalOpen} />
       
       <Home />
       <About />
       <Projects isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
       
-      {/* Skills Section with Infinite Slider */}
       <section id="skills" className="skills">
         <InfiniteSliderComponent config={sliderConfig} />
       </section>
 
-      {/* Contact Section */}
       <section id="contact" className="contact-section">
         <div className="contact-title">Contact Me</div>
         <Contact />
       </section>
 
-      {/* Footer */}
       <div className="bg-gray-900 bg-opacity-70 text-white p-4 relative z-10">
         <div className="max-w-[112.5rem] mx-auto flex justify-between items-center">
           <div className="text-lg font-bold">Samu Kirjonen</div>

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Modal from './Modal'; // Import the Modal component
+import Modal from './Modal'; 
 
 const projectsData = [
     {
@@ -131,14 +131,13 @@ const Projects = ({ isModalOpen, setIsModalOpen }) => {
     };
     useEffect(() => {
         if (isModalOpen) {
-            document.body.style.overflow = 'hidden'; // Disable scrolling
+            document.body.style.overflow = 'hidden'; 
         } else {
-            document.body.style.overflow = ''; // Enable scrolling
+            document.body.style.overflow = '';
         }
 
-        // Cleanup when component unmounts
         return () => {
-            document.body.style.overflow = ''; // Ensure scroll is enabled when the modal is closed
+            document.body.style.overflow = ''; 
         };
     }, [isModalOpen]);
 
@@ -146,7 +145,6 @@ const Projects = ({ isModalOpen, setIsModalOpen }) => {
         <section id="projects" className="projects">
             <div className="projects-title">Projects</div>
             <div className="projects-grid">
-                {/* Render main projects */}
                 {projectsData.map((project) => (
                     <Card
                         key={project.id}
@@ -158,7 +156,6 @@ const Projects = ({ isModalOpen, setIsModalOpen }) => {
                     />
                 ))}
 
-                {/* Render FitSign project separately */}
                 <Card
                     title={fitsignProject.title}
                     description={fitsignProject.description}
@@ -168,7 +165,6 @@ const Projects = ({ isModalOpen, setIsModalOpen }) => {
                 />
             </div>
 
-            {/* Render the Modal component */}
             {isModalOpen && selectedProject && (
                 <Modal
                     isOpen={isModalOpen}

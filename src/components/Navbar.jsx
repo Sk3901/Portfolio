@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-// Scroll functions
 const handleHomeClick = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 };
@@ -27,15 +26,12 @@ const handleContactClick = () => {
 };
 
 const Navbar = ({ isModalOpen }) => {
-  // State to toggle menu visibility
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Function to toggle menu visibility
   const toggleMenu = () => {
     setIsMenuOpen((prevState) => !prevState);
   };
 
-  // Function to close the menu explicitly
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
@@ -45,12 +41,10 @@ const Navbar = ({ isModalOpen }) => {
       <div className="navbar-container">
         <div className="navbar-title">Samu Kirjonen</div>
 
-        {/* Hamburger Menu */}
         <div className="navbar-hamburger" onClick={toggleMenu}>
-          &#9776; {/* This is the hamburger icon */}
+          &#9776; 
         </div>
 
-        {/* Navbar links */}
         <div className={`navbar-links ${isMenuOpen ? "active" : ""}`}>
           <span
             onClick={() => {

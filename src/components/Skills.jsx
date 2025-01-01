@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 
-// InfiniteSlider Class
 class InfiniteSlider {
     constructor(config = {}) {
         this.container = config.container || null;
@@ -177,7 +176,6 @@ class InfiniteSlider {
     }
 }
 
-// InfiniteSlider React Component
 const InfiniteSliderComponent = ({ config }) => {
     const sliderRef = useRef();
 
@@ -188,7 +186,6 @@ const InfiniteSliderComponent = ({ config }) => {
         });
 
         return () => {
-            // Cleanup interval on unmount
             if (slider.sliderControls.interval) {
                 clearInterval(slider.sliderControls.interval);
             }
@@ -197,10 +194,8 @@ const InfiniteSliderComponent = ({ config }) => {
 
     return (
         <section id="skills" className='relative'>
-          {/* Title Section */}
           <div className="skills-title">Skills</div>
           
-          {/* Infinite Slider Section */}
           <div ref={sliderRef} className="accordion-main"></div>
         </section>
       );

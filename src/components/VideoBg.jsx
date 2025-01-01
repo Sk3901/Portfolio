@@ -1,4 +1,3 @@
-// src/components/VideoBg.jsx
 import React from "react";
 import videoSrc from "../assets/Videobg.mp4"; 
 

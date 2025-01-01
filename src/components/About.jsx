@@ -5,7 +5,6 @@ const About = () => {
     <section id="about" className="about">
       <div className="about-title">About Me</div>
       <div className="about-container">
-        {/* About Text */}
     
         <div className="about-text">
           <p>
@@ -22,7 +21,6 @@ const About = () => {
           </p>
         </div>
 
-        {/* Timeline Section */}
         <div className="timeline">
           <div className="timeline-item">
             <div className="timeline-date">2022</div>

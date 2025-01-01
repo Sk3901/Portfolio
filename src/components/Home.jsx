@@ -32,33 +32,29 @@ const Home = () => {
 
   return (
     <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 sm:px-8 md:px-16 pt-24 md:pt-48">
-      {/* Header Section */}
       <div className="flex-grow text-center">
-        {/* Main Heading */}
         <h1 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-sans font-bold leading-snug mb-4">
           <motion.div
             initial={{ opacity: 0, x: -500 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 2 }} // Reduced duration for faster animation
+            transition={{ duration: 2 }} 
           >
             Welcome to my portfolio!
           </motion.div>
         </h1>
-        {/* Subheading */}
         <h2 className="text-white text-lg sm:text-xl md:text-2xl lg:text-4xl font-medium mb-8 sm:mb-10 md:mb-12">
           <motion.div
             initial={{ opacity: 0, x: 500 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 2 }} // Reduced duration for consistency
+            transition={{ duration: 2 }} 
           >
             Explore my projects and skills!
           </motion.div>
         </h2>
       </div>
 
-      {/* Small Grid Section */}
       <div className="w-full flex justify-center mb-16">
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
           <div className="bg-green-800 bg-opacity-50 border-2 border-cyan-400 p-2 rounded-lg">
