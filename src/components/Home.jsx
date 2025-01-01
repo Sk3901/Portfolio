@@ -31,7 +31,7 @@ const Home = () => {
   };
 
   return (
-    <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 sm:px-8 md:px-16 pt-24 md:pt-48">
+    <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 sm:px-8 md:px-16 pt-32 md:pt-56">
       <div className="flex-grow text-center">
         <h1 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-sans font-bold leading-snug mb-4">
           <motion.div
@@ -43,7 +43,7 @@ const Home = () => {
             Welcome to my portfolio!
           </motion.div>
         </h1>
-        <h2 className="text-white text-lg sm:text-xl md:text-2xl lg:text-4xl font-medium mb-8 sm:mb-10 md:mb-12">
+        <h2 className="text-white text-lg sm:text-xl md:text-2xl lg:text-4xl font-medium  mb-8 sm:mb-10 md:mb-12">
           <motion.div
             initial={{ opacity: 0, x: 500 }}
             animate={{ opacity: 1, x: 0 }}
