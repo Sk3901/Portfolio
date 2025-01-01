@@ -49,6 +49,8 @@ button:focus {
     top: 0;
     left: 0;
     transition: all 0.3s ease;
+    width: clamp(100%, 20rem, 80%);
+
 
 }
 
@@ -187,7 +189,7 @@ button:focus {
     border-style: solid;
     border-color: #00d4ff;    ;
     background-color: black;
-    ;
+    
 
 }
 
@@ -309,10 +311,12 @@ button:focus {
 
 .projects-title {
     color: white;
+    width: clamp(50%, 20rem, 80%);
+    margin: 0 auto 5%;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    padding: 2%;
     text-align: center;
     font-weight: bold;
-    padding: 1rem; /* Adjust padding for inner spacing */
-    font-size: 2rem;
     margin: 0 auto 1rem auto; /* Centers the element */
     margin-bottom: 2.5rem;
     border-radius: 1rem;
@@ -320,9 +324,6 @@ button:focus {
     border-style: solid;
     border-color: #00d4ff;    ;
     background-color: black;
-    width: 20%; /* Set to a percentage of the parent container */
-    margin-left: 5rem;
-    overflow: hidden;
 
 }
 
@@ -365,17 +366,19 @@ button:focus {
 .skills{
     background-color: rgba(26,32,44,0.6);
     padding: 40px;
-    ;
+    
 
 }
 
 
 .skills-title {
     color: white;
+    width: clamp(50%, 20rem, 80%);
+    margin: 0 auto 5%;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    padding: 2%;
     text-align: center;
     font-weight: bold;
-    padding: 1rem; /* Adjust padding for inner spacing */
-    font-size: 2rem;
     margin: 0 auto 1rem auto; /* Centers the element */
     margin-bottom: 2.5rem;
     border-radius: 1rem;
@@ -383,9 +386,6 @@ button:focus {
     border-style: solid;
     border-color: #00d4ff;    ;
     background-color: black;
-    width: 20%; /* Set to a percentage of the parent container */
-    margin-left: 5rem;
-    overflow: hidden;
 
 }
 
@@ -450,11 +450,14 @@ button:focus {
 }
 
 .contact-title {
+    margin-top: 30%;
     color: white;
+    width: clamp(50%, 20rem, 80%);
+    margin: 0 auto 5%;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    padding: 2%;
     text-align: center;
     font-weight: bold;
-    padding: 1rem; /* Adjust padding for inner spacing */
-    font-size: 2rem;
     margin: 0 auto 1rem auto; /* Centers the element */
     margin-bottom: 2.5rem;
     border-radius: 1rem;
@@ -462,9 +465,6 @@ button:focus {
     border-style: solid;
     border-color: #00d4ff;    ;
     background-color: black;
-    width: 20%; /* Set to a percentage of the parent container */
-    margin-left: 5rem;
-    overflow: hidden;
 }
 
 
@@ -519,8 +519,7 @@ button:focus {
     border-color: #00d4ff;  
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 100%;
-    max-width: 350px; 
+    width: clamp(50%, 20rem, 80%);
     height: auto;
     padding: 1.5rem;  /* added padding for card */
 
@@ -602,7 +601,8 @@ button:focus {
     text-transform: uppercase;
     transition: background 0.3s ease, transform 0.2s ease;
     margin-bottom: 1rem;
-    ;
+    width: clamp(50%, 20rem, 100%);
+
 
 }
 
@@ -625,6 +625,8 @@ button:focus {
     font-weight: bold;
     text-transform: uppercase;
     transition: background 0.3s ease, transform 0.2s ease;
+    width: clamp(50%, 20rem, 100%);
+
 
 }
 
@@ -645,7 +647,8 @@ button:focus {
     font-weight: bold;
     text-transform: uppercase;
     transition: background 0.3s ease, transform 0.2s ease;
-    ;
+    width: clamp(50%, 20rem, 100%);
+
 }
 
 .site-button:hover {
