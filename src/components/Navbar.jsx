@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 // Scroll functions
 const handleHomeClick = () => {
@@ -27,24 +27,74 @@ const handleContactClick = () => {
 };
 
 const Navbar = ({ isModalOpen }) => {
+  // State to toggle menu visibility
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Function to toggle menu visibility
+  const toggleMenu = () => {
+    setIsMenuOpen((prevState) => !prevState);
+  };
+
+  // Function to close the menu explicitly
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <nav className={`navbar ${isModalOpen ? "hidden" : ""}`}>
       <div className="navbar-container">
         <div className="navbar-title">Samu Kirjonen</div>
-        <div className="navbar-links">
-          <span onClick={handleHomeClick} className="navbar-button">
+
+        {/* Hamburger Menu */}
+        <div className="navbar-hamburger" onClick={toggleMenu}>
+          &#9776; {/* This is the hamburger icon */}
+        </div>
+
+        {/* Navbar links */}
+        <div className={`navbar-links ${isMenuOpen ? "active" : ""}`}>
+          <span
+            onClick={() => {
+              handleHomeClick();
+              closeMenu();
+            }}
+            className="navbar-button"
+          >
             Home
           </span>
-          <span onClick={handleAboutClick} className="navbar-button">
+          <span
+            onClick={() => {
+              handleAboutClick();
+              closeMenu();
+            }}
+            className="navbar-button"
+          >
             About
           </span>
-          <span onClick={handleProjectsClick} className="navbar-button">
+          <span
+            onClick={() => {
+              handleProjectsClick();
+              closeMenu();
+            }}
+            className="navbar-button"
+          >
             Projects
           </span>
-          <span onClick={handleContactClick} className="navbar-button">
+          <span
+            onClick={() => {
+              handleContactClick();
+              closeMenu();
+            }}
+            className="navbar-button"
+          >
             Skills
           </span>
-          <span onClick={handleContactClick} className="navbar-button">
+          <span
+            onClick={() => {
+              handleContactClick();
+              closeMenu();
+            }}
+            className="navbar-button"
+          >
             Contact
           </span>
         </div>

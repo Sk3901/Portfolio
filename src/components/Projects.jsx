@@ -5,7 +5,7 @@ const projectsData = [
     {
         id: 1,
         title: "Portfolio Page",
-        description: "Personal portfolio showcasing skills and selfmade projects. Designed with a focus on user experience.",
+        description: "Personal portfolio showcasing skills and selfmade projects. Designed with a focus on user experience, and responsiveness",
         image: { src: '/images/Portfolio.png', alt: "Image of portfolio project" },
         sourceCode: "https://github.com/Sk3901/portfolio",
         categories: [
