@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import Modal from './Modal'; // Import the Modal component
 
 const projectsData = [
@@ -129,6 +129,18 @@ const Projects = ({ isModalOpen, setIsModalOpen }) => {
         setSelectedProject(null);
         setIsModalOpen(false);
     };
+    useEffect(() => {
+        if (isModalOpen) {
+            document.body.style.overflow = 'hidden'; // Disable scrolling
+        } else {
+            document.body.style.overflow = ''; // Enable scrolling
+        }
+
+        // Cleanup when component unmounts
+        return () => {
+            document.body.style.overflow = ''; // Ensure scroll is enabled when the modal is closed
+        };
+    }, [isModalOpen]);
 
     return (
         <section id="projects" className="projects">

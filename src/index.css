@@ -669,6 +669,8 @@ button:focus {
     justify-content: center;
     align-items: center;
     z-index: 10000;
+    width: clamp(100%, 20rem, 100%);
+
     
     
 }
