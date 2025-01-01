@@ -511,6 +511,26 @@ button:focus {
 
 }
 
+@media (max-width: 768px) {
+    .projects-grid {
+        flex-direction: column;  /* Stack the cards vertically */
+        align-items: center;  /* Center the cards */
+        gap: 1.5rem; /* Smaller gap between cards on mobile */
+    }
+
+    .card {
+        width: 90%;  /* Adjust card width to take most of the screen */
+        max-width: 500px; /* Optional: max width for better control */
+    }
+}
+
+/* Optional: For extra small screens (very small mobile devices) */
+@media (max-width: 480px) {
+    .card {
+        width: 100%;  /* Make cards full width on very small screens */
+    }
+}
+
 .card {
     background-color: black;
     border-radius: 1rem;
@@ -657,7 +677,7 @@ button:focus {
 }
 
 
-
+/* Modal Overlay */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -670,11 +690,9 @@ button:focus {
     align-items: center;
     z-index: 10000;
     width: clamp(100%, 20rem, 100%);
-
-    
-    
 }
 
+/* Modal Title */
 .modal-title {
     background-color: black;
     color: white;
@@ -682,7 +700,7 @@ button:focus {
     border-radius: 1rem;
     border-width: 2px;
     border-style: solid;
-    border-color: #00d4ff;  
+    border-color: #00d4ff;
     font-size: 1.5rem;
     font-weight: bold;
     padding: 0.8rem;
@@ -690,14 +708,16 @@ button:focus {
     margin-top: 0rem;
 }
 
-.modal-title-underline{
+/* Title Underline */
+.modal-title-underline {
     width: 30rem;
     height: 0.3rem;
     background-color: #00d4ff;
     margin: 1rem auto;
     border-radius: 0.2rem;
-
 }
+
+/* Modal Content */
 .modal-content {
     background: linear-gradient(to top left, #1c1c1c, #4a4a4a);
     color: #333;
@@ -705,9 +725,8 @@ button:focus {
     border-radius: 1rem;
     border-width: 2px;
     border-style: solid;
-    border-color: #00d4ff; 
+    border-color: #00d4ff;
     width: 40rem;
-    height: 51rem;
     max-width: 80%;
     text-align: center;
     position: relative;
@@ -717,8 +736,11 @@ button:focus {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    max-height: 90vh; /* Prevent modal from exceeding viewport height */
+    overflow-y: auto; /* Make modal scrollable if content overflows */
 }
 
+/* Title inside Modal */
 .modal-content h2 {
     font-size: 1.5rem;
     margin-bottom: 1.4rem;
@@ -726,8 +748,9 @@ button:focus {
     font-weight: bold;
 }
 
-.modal-cards{
-    display:flex;
+/* Cards inside Modal */
+.modal-cards {
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
@@ -735,21 +758,22 @@ button:focus {
     margin-bottom: 1rem;
 }
 
+/* Individual Card inside Modal */
 .modal-card {
     background-color: black;
     border-width: 2px;
     border-style: solid;
-    border-color: #00d4ff;  
+    border-color: #00d4ff;
     color: white;
     padding: 1rem;
-    border-radius: 1rem; /* Rounded corners (poker card-like) */
+    border-radius: 1rem;
     text-align: center;
-    width: 9rem; /* Smaller width for card size
+    width: 9rem; /* Smaller width for card size */
     height: 14rem; /* Proportional height */
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5); /* Subtle shadow */
     transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth hover effect */
     display: flex;
-    flex-direction: column; /* Stack text vertically */
+    flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
 }
@@ -767,6 +791,7 @@ button:focus {
     margin-top: 0rem;
 }
 
+/* Paragraph inside Modal */
 .modal-content p {
     font-size: 0.95rem;
     margin-bottom: 3rem;
@@ -775,25 +800,90 @@ button:focus {
     text-align: left;
 }
 
+/* Modal Close Button */
 .modal-content button {
     border-radius: 1rem;
     border-width: 2px;
     border-style: solid;
-    border-color: #00d4ff; 
+    border-color: #00d4ff;
     padding: 0.7rem 1.7rem;
     background-color: #004aad;
     color: white;
     border: none;
-    border-radius: 1rem;
     cursor: pointer;
     transition: background 0.3s ease;
     margin-top: 1.6rem;
-
 }
 
+/* Button Hover Effect */
 .modal-content button:hover {
     background-color: #0066cc;
 }
+
+/* Media Queries for Responsiveness */
+
+/* Tablets and below */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90%; /* Adjust width for smaller screens */
+        padding: 2rem; /* Reduce padding */
+        max-height: 80vh; /* Prevent modal from overflowing */
+    }
+
+    .modal-title {
+        font-size: 1.3rem; /* Adjust font size */
+        padding: 0.6rem; /* Smaller padding */
+    }
+
+    .modal-cards {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center;    /* Center the cards */
+        gap: 1rem;              /* Reduced gap between cards */
+        width: 100%;            /* Full-width cards */
+    }
+
+    .modal-card {
+        width: 100%;            /* Full-width card */
+        max-width: 300px;       /* Limit card width */
+        height: auto;           /* Auto height for cards */
+    }
+
+    .modal-content button {
+        padding: 0.6rem 1.4rem; /* Smaller button padding */
+        font-size: 1rem;        /* Adjust font size */
+        width: 100%;            /* Full-width button */
+        max-width: 200px;       /* Limit button width */
+        margin-top: 1rem;       /* Reduce margin for button */
+    }
+}
+
+/* Mobile and below */
+@media (max-width: 576px) {
+    .modal-content {
+        padding: 1.5rem;        /* Reduce padding further */
+        max-height: 80vh;       /* Ensure modal does not exceed screen height */
+    }
+
+    .modal-title {
+        font-size: 1.2rem;      /* Adjust title font size */
+    }
+
+    .modal-cards {
+        gap: 0.5rem;            /* Reduced gap between cards */
+    }
+
+    .modal-card {
+        width: 100%;            /* Full-width card */
+        max-width: 250px;       /* Further limit card width */
+    }
+
+    .modal-content button {
+        padding: 0.5rem 1.2rem; /* Smaller button padding */
+        font-size: 0.9rem;      /* Smaller button font size */
+        width: 100%;            /* Full-width button */
+    }
+}
+
 
 .no-scroll {
     overflow: hidden;
