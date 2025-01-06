@@ -228,6 +228,7 @@ button:focus {
 
 }
 
+
 .about-container{
     display: flex;
     justify-content: space-between;
@@ -247,7 +248,7 @@ button:focus {
     text-align: center;
     font-weight: bold;
     margin: 0 auto 1rem auto;
-    margin-bottom: 2.5rem;
+    margin-bottom: 3.5rem;
     border-radius: 1rem;
     border-width: 2px;
     border-style: solid;
@@ -260,6 +261,8 @@ button:focus {
 
 
 .about-text{
+    width: clamp(100%, 20rem, 20%);
+    margin-top: 2rem;
     text-align: center;
     justify-content: center;
     color: white;
@@ -272,7 +275,6 @@ button:focus {
 .about-text p{
     margin-bottom: 1.7rem;
     text-align: left;
-    margin-left: 5rem;
     padding: 0.8rem;
     border-radius: 0.3rem;
     border-style: solid;

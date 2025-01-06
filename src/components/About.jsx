@@ -8,10 +8,10 @@ const About = () => {
     
         <div className="about-text">
           <p>
-            Welcome to my website! I’m a software development student with a strong passion for creating functional and impactful applications. I enjoy turning ideas into reality by developing innovative software solutions that solve real-world problems.
+            Welcome to my website! I’m a ICT student with a strong passion for creating functional and impactful applications. I enjoy turning ideas into reality by developing innovative software solutions that solve real-world problems.
           </p>
           <p>
-            My journey in software development has allowed me to work with various technologies, and I’m always eager to learn more. I enjoy the challenge of building things from scratch, whether it’s the logic behind an application or the systems that support it.
+            My journey in ICT has allowed me to work with various technologies, and I’m always eager to learn more. I enjoy the challenge of building things from scratch, whether it’s the logic behind an application or the systems that support it.
           </p>
           <p>
             I’m constantly exploring new tools, programming languages, and techniques to expand my skillset. My focus is on creating clean, efficient, and scalable solutions that deliver results.
